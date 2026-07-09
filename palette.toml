@@ -53,16 +53,16 @@ plus_emph  = "#1d4a3e"
 
 [variants.drowned]
 suffix       = "Drowned"
-comment      = ["drowned: teal deep — R'lyeh, the sunken"]
-base         = "#08161a"
-surface      = "#0f2329"
-overlay      = "#163139"
-_nc          = "#050f12"
+comment      = ["drowned: smoky blue-teal — blade runner's rain-dark city, R'lyeh with the neon on"]
+base         = "#111a1e"
+surface      = "#1a272d"
+overlay      = "#23353d"
+_nc          = "#0c1316"
 hl_low       = "#20262a"
 hl_med       = "#3e4750"
 hl_high      = "#505a64"
-inactive_tab = "#0d1f25"
-border       = "#202e34"
+inactive_tab = "#172329"
+border       = "#293338"
 selection    = "#464357"
 
 [variants.void]

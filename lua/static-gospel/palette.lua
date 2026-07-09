@@ -39,11 +39,11 @@ local ramps = {
 		highlight_low = "#21202e", highlight_med = "#403d52", highlight_high = "#524f67",
 		border = "#26233a",
 	},
-	-- drowned: teal deep — R'lyeh, the sunken
+	-- drowned: smoky blue-teal — blade runner's rain-dark city, R'lyeh with the neon on
 	drowned = {
-		base = "#08161a", surface = "#0f2329", overlay = "#163139", _nc = "#050f12",
+		base = "#111a1e", surface = "#1a272d", overlay = "#23353d", _nc = "#0c1316",
 		highlight_low = "#20262a", highlight_med = "#3e4750", highlight_high = "#505a64",
-		border = "#202e34",
+		border = "#293338",
 	},
 	-- abyssal: deep cosmic blue
 	abyssal = {

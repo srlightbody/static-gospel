@@ -2,11 +2,11 @@
 # static gospel: full-chroma occult neon over deep voids
 
 [colors.primary]
-background = "#08161a"
+background = "#111a1e"
 foreground = "#ebfafa"
 
 [colors.cursor]
-text   = "#08161a"
+text   = "#111a1e"
 cursor = "#37f499"
 
 [colors.selection]
@@ -14,7 +14,7 @@ text       = "#e0def4"
 background  = "#464357"
 
 [colors.normal]
-black   = "#202e34"
+black   = "#293338"
 red     = "#ff3860"
 green   = "#37f499"
 yellow  = "#ffce54"
