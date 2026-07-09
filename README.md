@@ -1,12 +1,11 @@
 # Static Gospel
 
-Eldritch cyberpunk: a cthulhu cult running on futuristic tech, the neon is the
-delivery, the horror is the payload. Full-chroma occult signal over deep,
-near-black voids; punch comes from hue contrast on the dark, not from muting the
-field. The green cursor is the one thing genuinely alive. Ships five ramps:
-**void** (near-black violet, the recommended base), **drowned** (teal),
-**abyssal** (blue), plus raised-floor **lifted** / **void-lifted** for
-low-contrast LCD/laptop panels.
+A dark theme, cthulhu cult running on cyberpunk tech. Loud, saturated accents
+over nearly black backgrounds, tuned to read bright instead of muted. It covers
+most of what I stare at all day: nvim, terminals, git tools, the prompt, the WM.
+Five ramps: **void** (violet black, the default), **drowned** (teal), **abyssal**
+(blue), plus **lifted** and **void-lifted**, raised off the floor for LCD panels
+that wash the dark out.
 
 Forked from [eldritch-rose](https://github.com/srlightbody/eldritch-rose) at the
 point its palette diverged from that theme's muted rose-pine restraint into
