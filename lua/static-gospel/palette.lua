@@ -15,7 +15,7 @@ local shared = {
 	siren = "#fa4fbc",
 	rift = "#9d6bff",
 	aether = "#04d1f9",
-	aether_dim = "#22e0c0",
+	verdigris = "#22e0c0",
 	umbra = "#b48eff",
 	blight = "#37f499",
 

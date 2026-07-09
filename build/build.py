@@ -164,7 +164,7 @@ def build_lua(pal):
     for k in ("ash", "shroud", "text"):
         add(f'\t{k} = "{a[k]}",')
     add("")
-    for k in ("ichor", "witchfire", "siren", "rift", "aether", "aether_dim", "umbra", "blight"):
+    for k in ("ichor", "witchfire", "siren", "rift", "aether", "verdigris", "umbra", "blight"):
         add(f'\t{k} = "{a[k]}",')
     add("")
     add("\t-- bright ANSI, used only by the embedded terminal")

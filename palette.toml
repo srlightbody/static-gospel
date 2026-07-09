@@ -15,7 +15,7 @@ text      = "#ebfafa"
 # static gospel: a cthulhu cult running on futuristic tech,
 # the neon is the delivery, the horror is the payload. Full-chroma field- punch
 # comes from hue contrast on the void ramp, not from saturating a muted field.
-# rift = violet ritual (keywords), siren = magenta wound (functions), aether_dim
+# rift = violet ritual (keywords), siren = magenta wound (functions), verdigris
 # = toxic-teal wrongness (types/props/members), witchfire = forbidden gold
 # (strings/numbers/constants), ichor = wound-red (errors). aether stays an
 # electric-cyan signal, a step hotter than the field; blight/cursor keep the
@@ -25,7 +25,7 @@ witchfire  = "#ffce54"
 siren      = "#fa4fbc"
 rift       = "#9d6bff"
 aether     = "#04d1f9"
-aether_dim = "#22e0c0"
+verdigris = "#22e0c0"
 umbra      = "#b48eff"
 blight     = "#37f499"
 cursor     = "#37f499"

@@ -32,7 +32,7 @@ change per ramp. Values below pair the accents with the **void** base.
 | siren (functions)   | `#fa4fbc` | magenta wound       |
 | rift (keywords)     | `#9d6bff` | violet ritual       |
 | aether (signal)     | `#04d1f9` | electric cyan       |
-| aether_dim (types)  | `#22e0c0` | toxic teal          |
+| verdigris (types)  | `#22e0c0` | toxic teal          |
 | umbra (directives)  | `#b48eff` | violet              |
 | blight / cursor     | `#37f499` | the one alive thing |
 | selection (void)    | `#413d51` | violet tint         |
@@ -50,7 +50,7 @@ bright   8 #6e7487  9 #ff5c78 10 #69f8b3 11 #ffe08a 12 #b892ff 13 #ff86d4 14 #66
 
 ## Variants
 
-Accents are identical everywhere; only the background ramp changes. **drowned**
+Accents are identical everywhere; only the background ramp changes. **void**
 is the default. **lifted** and **void-lifted** are utility variants: drowned's
 and void's ramps with the floor raised ~5 L* and the steps widened so the depth
 survives on low-contrast LCD/laptop panels instead of crushing to flat grey.
@@ -58,8 +58,8 @@ Prefer them on non-OLED displays.
 
 | Variant | base | feel |
 |---------|-----------|-----------------------|
-| drowned *(default)* | `#08161a` | teal deep, the sunken |
-| void    | `#0e0218` | near-black violet |
+| void *(default)* | `#0e0218` | near-black violet, night city |
+| drowned | `#08161a` | teal deep, the sunken |
 | abyssal | `#0a1020` | deep cosmic blue |
 | lifted  | `#0c2126` | drowned, tuned for LCD |
 | void-lifted | `#251631` | void, tuned for LCD |
@@ -79,10 +79,10 @@ vim.cmd.colorscheme("static-gospel")
 ```
 
 **Everything else** ships a file per variant next to the default (which is
-drowned), e.g. `ghostty/static-gospel-void`, `bat/static-gospel-abyssal.tmTheme`,
+void), e.g. `ghostty/static-gospel-drowned`, `bat/static-gospel-abyssal.tmTheme`,
 `noctalia/colorschemes/Static Gospel Abyssal`, `brave/static-gospel-abyssal/`.
-Point your app at the variant file instead of the default. (VS Code ships
-drowned only for now.)
+Point your app at the variant file instead of the default. (VS Code still ships
+the old drowned colors and is pending a regen.)
 
 ## Building
 
@@ -178,8 +178,9 @@ Reload with `tmux source-file ~/.config/tmux/tmux.conf`.
 
 ### powerlevel10k
 
-Overrides the colors of your existing generated `~/.p10k.zsh`; flattens the
-rainbow segments onto one muted surface. Source it after p10k's config:
+Overrides the colors of your existing generated `~/.p10k.zsh`; collapses the
+rainbow segments onto one lit surface bar with hot accent text. Source it after
+p10k's config:
 
 ```sh
 mkdir -p ~/.config/zsh
@@ -342,7 +343,7 @@ cp -r "noctalia/colorschemes/Static Gospel" ~/.config/noctalia/colorschemes/
   highlight engine (MIT, see LICENSE) and drives it from the palette above, so
   there's no runtime dependency and it's free to drift from rose pine over time.
 - Syntax roles: keywords ride `rift` (violet ritual), functions `siren` (magenta
-  wound), types/members/properties `aether_dim` (toxic teal), strings/numbers
+  wound), types/members/properties `verdigris` (toxic teal), strings/numbers
   `witchfire` (gold), errors `ichor` (wound-red). `aether` (electric cyan) and
   the green cursor/`blight` sit a step hotter as the signals that must always read.
 - ANSI: the blue slot (`color4` = `rift`) is now violet and sits close to the
