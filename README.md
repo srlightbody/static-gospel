@@ -14,6 +14,14 @@ full-chroma cyberpunk; eldritch-rose stays as the muted sibling. The neovim
 highlight engine is adapted from [rosé-pine/neovim](https://github.com/rose-pine/neovim)
 (MIT, see `LICENSE`); the palette is original.
 
+## Who it's for
+
+Mostly me. I built it for my own eyes and my own work (a lot of terraform, a lot
+of terminal time), and every color is a deliberate call tuned to what I stare at
+all day. It's public because it's good and someone might want it, but I'm not
+running it as a project or chasing feature requests- if you want to add something,
+throw a PR up and I'll probably take it, or just fork it and do whatever, it's MIT.
+
 ## Palette
 
 ![Static Gospel palette](palette.svg)
@@ -76,7 +84,7 @@ Prefer them on non-OLED displays.
 **Neovim** picks the variant at runtime:
 
 ```lua
-require("static-gospel").setup({ variant = "void" }) -- or abyssal, lifted, void-lifted
+require("static-gospel").setup({ variant = "drowned" }) -- or abyssal, lifted, void-lifted (void is the default)
 vim.cmd.colorscheme("static-gospel")
 ```
 
@@ -95,12 +103,12 @@ and regenerate:
 ```bash
 python build/build.py            # regenerate every app file + palette.lua
 python build/build.py check      # fail if any file is out of sync (CI/pre-commit)
-python build/build.py templatize # rebuild templates from the drowned files
+python build/build.py templatize # rebuild templates from the void (default) files
 ```
 
-Only the nine per-variant roles (`base`/`surface`/`overlay`/`_nc`, the three
-highlight grays, plus `inactive_tab`/`border`) and the display name differ
-between variants; accents, bright ANSI, and delta's diff tints are shared.
+Only the ten per-variant roles (`base`/`surface`/`overlay`/`_nc`, the three
+highlight grays, plus `inactive_tab`/`border`/`selection`) and the display name
+differ between variants; accents, bright ANSI, and delta's diff tints are shared.
 Adding a variant is a new `[variants.*]` block in `palette.toml` followed by a
 build.
 
@@ -204,10 +212,10 @@ git clone https://github.com/srlightbody/static-gospel ~/.static-gospel
 ```
 
 Open `brave://extensions` (or `chrome://extensions`), enable Developer mode, click
-"Load unpacked", and select `~/.static-gospel/brave` for the default (drowned)
-theme, or a variant subfolder (`brave/static-gospel-void`, `-abyssal`,
-`-lifted`). Each variant is a separate extension; to switch, load the new one and
-disable the old on the extensions page.
+"Load unpacked", and select `~/.static-gospel/brave` for the default (void)
+theme, or a variant subfolder (`brave/static-gospel-drowned`, `-abyssal`,
+`-lifted`, `-void-lifted`). Each variant is a separate extension; to switch, load
+the new one and disable the old on the extensions page.
 
 ### foot
 
@@ -313,7 +321,7 @@ curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/lsd/
 ```
 
 lsd only reads `colors.yaml`, so for a variant save its file (e.g.
-`lsd/static-gospel-void.yaml`) to that same path.
+`lsd/static-gospel-drowned.yaml`) to that same path.
 
 ### Noctalia
 
