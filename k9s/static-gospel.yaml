@@ -1,0 +1,86 @@
+# Static Gospel - k9s skin
+# place in ~/.config/k9s/skins/static-gospel.yaml, then set in config.yaml:
+#   k9s:
+#     ui:
+#       skin: static-gospel
+
+k9s:
+  body:
+    fgColor: "#ebfafa"
+    bgColor: "#08161a"
+    logoColor: "#04d1f9"
+  prompt:
+    fgColor: "#ebfafa"
+    bgColor: "#08161a"
+    suggestColor: "#b48eff"
+  info:
+    fgColor: "#04d1f9"
+    sectionColor: "#ebfafa"
+  dialog:
+    fgColor: "#ebfafa"
+    bgColor: "#08161a"
+    buttonFgColor: "#08161a"
+    buttonBgColor: "#04d1f9"
+    buttonFocusFgColor: "#08161a"
+    buttonFocusBgColor: "#37f499"
+    labelFgColor: "#ffce54"
+    fieldFgColor: "#ebfafa"
+  frame:
+    border:
+      fgColor: "#202e34"
+      focusColor: "#fa4fbc"
+    menu:
+      fgColor: "#ebfafa"
+      keyColor: "#b48eff"
+      numKeyColor: "#b48eff"
+    crumbs:
+      fgColor: "#08161a"
+      bgColor: "#3e4750"
+      activeColor: "#04d1f9"
+    status:
+      newColor: "#04d1f9"
+      modifyColor: "#9d6bff"
+      addColor: "#37f499"
+      errorColor: "#ff3860"
+      highlightColor: "#ffce54"
+      killColor: "#b48eff"
+      completedColor: "#6e7487"
+    title:
+      fgColor: "#ebfafa"
+      bgColor: "#08161a"
+      highlightColor: "#ffce54"
+      counterColor: "#b48eff"
+      filterColor: "#04d1f9"
+  views:
+    charts:
+      bgColor: "#08161a"
+      defaultDialColors:
+        - "#04d1f9"
+        - "#ff3860"
+      defaultChartColors:
+        - "#04d1f9"
+        - "#ff3860"
+    table:
+      fgColor: "#ebfafa"
+      bgColor: "#08161a"
+      cursorFgColor: "#08161a"
+      cursorBgColor: "#202e34"
+      header:
+        fgColor: "#ebfafa"
+        bgColor: "#08161a"
+        sorterColor: "#37f499"
+    xray:
+      fgColor: "#ebfafa"
+      bgColor: "#08161a"
+      cursorColor: "#202e34"
+      graphicColor: "#04d1f9"
+    yaml:
+      keyColor: "#9d6bff"
+      colonColor: "#97a0b6"
+      valueColor: "#ebfafa"
+    logs:
+      fgColor: "#ebfafa"
+      bgColor: "#08161a"
+      indicator:
+        fgColor: "#04d1f9"
+        bgColor: "#08161a"

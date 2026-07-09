@@ -1,0 +1,17 @@
+# Static Gospel - wezterm
+# place in ~/.config/wezterm/colors/, then: config.color_scheme = "Static Gospel"
+
+[metadata]
+name = "Static Gospel"
+author = "Sam Lightbody"
+
+[colors]
+foreground = "#ebfafa"
+background = "#08161a"
+cursor_bg = "#37f499"
+cursor_fg = "#08161a"
+cursor_border = "#37f499"
+selection_fg = "#e0def4"
+selection_bg = "#464357"
+ansi = ["#202e34", "#ff3860", "#37f499", "#ffce54", "#9d6bff", "#b48eff", "#04d1f9", "#e0def4"]
+brights = ["#6e7487", "#ff5c78", "#69f8b3", "#ffe08a", "#b892ff", "#ff86d4", "#66e4fd", "#ebfafa"]

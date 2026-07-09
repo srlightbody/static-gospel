@@ -1,0 +1,34 @@
+# Static Gospel - alacritty (0.13+)
+# static gospel: full-chroma occult neon over deep voids
+
+[colors.primary]
+background = "#08161a"
+foreground = "#ebfafa"
+
+[colors.cursor]
+text   = "#08161a"
+cursor = "#37f499"
+
+[colors.selection]
+text       = "#e0def4"
+background  = "#464357"
+
+[colors.normal]
+black   = "#202e34"
+red     = "#ff3860"
+green   = "#37f499"
+yellow  = "#ffce54"
+blue    = "#9d6bff"
+magenta = "#b48eff"
+cyan    = "#04d1f9"
+white   = "#e0def4"
+
+[colors.bright]
+black   = "#6e7487"
+red     = "#ff5c78"
+green   = "#69f8b3"
+yellow  = "#ffe08a"
+blue    = "#b892ff"
+magenta = "#ff86d4"
+cyan    = "#66e4fd"
+white   = "#ebfafa"

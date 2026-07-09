@@ -1,0 +1,86 @@
+# Static Gospel Void Lifted - k9s skin
+# place in ~/.config/k9s/skins/static-gospel-void-lifted.yaml, then set in config.yaml:
+#   k9s:
+#     ui:
+#       skin: static-gospel-void-lifted
+
+k9s:
+  body:
+    fgColor: "#ebfafa"
+    bgColor: "#251631"
+    logoColor: "#04d1f9"
+  prompt:
+    fgColor: "#ebfafa"
+    bgColor: "#251631"
+    suggestColor: "#b48eff"
+  info:
+    fgColor: "#04d1f9"
+    sectionColor: "#ebfafa"
+  dialog:
+    fgColor: "#ebfafa"
+    bgColor: "#251631"
+    buttonFgColor: "#251631"
+    buttonBgColor: "#04d1f9"
+    buttonFocusFgColor: "#251631"
+    buttonFocusBgColor: "#37f499"
+    labelFgColor: "#ffce54"
+    fieldFgColor: "#ebfafa"
+  frame:
+    border:
+      fgColor: "#333048"
+      focusColor: "#fa4fbc"
+    menu:
+      fgColor: "#ebfafa"
+      keyColor: "#b48eff"
+      numKeyColor: "#b48eff"
+    crumbs:
+      fgColor: "#251631"
+      bgColor: "#464358"
+      activeColor: "#04d1f9"
+    status:
+      newColor: "#04d1f9"
+      modifyColor: "#9d6bff"
+      addColor: "#37f499"
+      errorColor: "#ff3860"
+      highlightColor: "#ffce54"
+      killColor: "#b48eff"
+      completedColor: "#6e7487"
+    title:
+      fgColor: "#ebfafa"
+      bgColor: "#251631"
+      highlightColor: "#ffce54"
+      counterColor: "#b48eff"
+      filterColor: "#04d1f9"
+  views:
+    charts:
+      bgColor: "#251631"
+      defaultDialColors:
+        - "#04d1f9"
+        - "#ff3860"
+      defaultChartColors:
+        - "#04d1f9"
+        - "#ff3860"
+    table:
+      fgColor: "#ebfafa"
+      bgColor: "#251631"
+      cursorFgColor: "#251631"
+      cursorBgColor: "#333048"
+      header:
+        fgColor: "#ebfafa"
+        bgColor: "#251631"
+        sorterColor: "#37f499"
+    xray:
+      fgColor: "#ebfafa"
+      bgColor: "#251631"
+      cursorColor: "#333048"
+      graphicColor: "#04d1f9"
+    yaml:
+      keyColor: "#9d6bff"
+      colonColor: "#97a0b6"
+      valueColor: "#ebfafa"
+    logs:
+      fgColor: "#ebfafa"
+      bgColor: "#251631"
+      indicator:
+        fgColor: "#04d1f9"
+        bgColor: "#251631"

@@ -1,0 +1,17 @@
+# Static Gospel Abyssal - wezterm
+# place in ~/.config/wezterm/colors/, then: config.color_scheme = "Static Gospel Abyssal"
+
+[metadata]
+name = "Static Gospel Abyssal"
+author = "Sam Lightbody"
+
+[colors]
+foreground = "#ebfafa"
+background = "#0a1020"
+cursor_bg = "#37f499"
+cursor_fg = "#0a1020"
+cursor_border = "#37f499"
+selection_fg = "#e0def4"
+selection_bg = "#444055"
+ansi = ["#222a3a", "#ff3860", "#37f499", "#ffce54", "#9d6bff", "#b48eff", "#04d1f9", "#e0def4"]
+brights = ["#6e7487", "#ff5c78", "#69f8b3", "#ffe08a", "#b892ff", "#ff86d4", "#66e4fd", "#ebfafa"]

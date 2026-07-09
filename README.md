@@ -1,0 +1,354 @@
+# Static Gospel
+
+Eldritch cyberpunk: a cthulhu cult running on futuristic tech, the neon is the
+delivery, the horror is the payload. Full-chroma occult signal over deep,
+near-black voids; punch comes from hue contrast on the dark, not from muting the
+field. The green cursor is the one thing genuinely alive. Ships five ramps:
+**void** (near-black violet, the recommended base), **drowned** (teal),
+**abyssal** (blue), plus raised-floor **lifted** / **void-lifted** for
+low-contrast LCD/laptop panels.
+
+Forked from [eldritch-rose](https://github.com/srlightbody/eldritch-rose) at the
+point its palette diverged from that theme's muted rose-pine restraint into
+full-chroma cyberpunk; eldritch-rose stays as the muted sibling. The neovim
+highlight engine is adapted from [rosé-pine/neovim](https://github.com/rose-pine/neovim)
+(MIT, see `LICENSE`); the palette is original.
+
+## Palette
+
+Accents are shared across every variant; only `base`/`surface`/`overlay`/grays
+change per ramp. Values below pair the accents with the **void** base.
+
+| Role                | Hex       | Note                |
+|---------------------|-----------|---------------------|
+| base (bg)           | `#0e0218` | void                |
+| surface             | `#17112b` | void                |
+| overlay             | `#241a38` | void                |
+| ash                 | `#6e7487` | steel neutral       |
+| shroud              | `#97a0b6` | steel neutral       |
+| text (fg)           | `#ebfafa` |                     |
+| ichor (errors)      | `#ff3860` | wound-red           |
+| witchfire (strings) | `#ffce54` | forbidden gold      |
+| siren (functions)   | `#fa4fbc` | magenta wound       |
+| rift (keywords)     | `#9d6bff` | violet ritual       |
+| aether (signal)     | `#04d1f9` | electric cyan       |
+| aether_dim (types)  | `#22e0c0` | toxic teal          |
+| umbra (directives)  | `#b48eff` | violet              |
+| blight / cursor     | `#37f499` | the one alive thing |
+| selection (void)    | `#413d51` | violet tint         |
+
+Full-chroma field; separation is carried by hue, violet / magenta / teal / gold
+/ cyan across the deep void, with the green cursor and electric-cyan `aether`
+held a step hotter as the signals that must always read.
+
+### 16-color ANSI (void)
+
+```
+normal   0 #26233a  1 #ff3860  2 #37f499  3 #ffce54  4 #9d6bff  5 #b48eff  6 #04d1f9  7 #e0def4
+bright   8 #6e7487  9 #ff5c78 10 #69f8b3 11 #ffe08a 12 #b892ff 13 #ff86d4 14 #66e4fd 15 #ebfafa
+```
+
+## Variants
+
+Accents are identical everywhere; only the background ramp changes. **drowned**
+is the default. **lifted** and **void-lifted** are utility variants: drowned's
+and void's ramps with the floor raised ~5 L* and the steps widened so the depth
+survives on low-contrast LCD/laptop panels instead of crushing to flat grey.
+Prefer them on non-OLED displays.
+
+| Variant | base | feel |
+|---------|-----------|-----------------------|
+| drowned *(default)* | `#08161a` | teal deep, the sunken |
+| void    | `#0e0218` | near-black violet |
+| abyssal | `#0a1020` | deep cosmic blue |
+| lifted  | `#0c2126` | drowned, tuned for LCD |
+| void-lifted | `#251631` | void, tuned for LCD |
+
+![drowned](assets/preview-drowned.png)
+![void](assets/preview-void.png)
+![abyssal](assets/preview-abyssal.png)
+![void-lifted](assets/preview-void-lifted.png)
+
+(lifted isn't pictured; it reads as drowned with a raised floor.)
+
+**Neovim** picks the variant at runtime:
+
+```lua
+require("static-gospel").setup({ variant = "void" }) -- or abyssal, lifted, void-lifted
+vim.cmd.colorscheme("static-gospel")
+```
+
+**Everything else** ships a file per variant next to the default (which is
+drowned), e.g. `ghostty/static-gospel-void`, `bat/static-gospel-abyssal.tmTheme`,
+`noctalia/colorschemes/Static Gospel Abyssal`, `brave/static-gospel-abyssal/`.
+Point your app at the variant file instead of the default. (VS Code ships
+drowned only for now.)
+
+## Building
+
+All app files are generated from a single source, `palette.toml`, so a color
+change is made once and propagated everywhere. Don't hand-edit the per-app
+theme files; edit `palette.toml` (or `build/templates/*.tmpl` for structure)
+and regenerate:
+
+```bash
+python build/build.py            # regenerate every app file + palette.lua
+python build/build.py check      # fail if any file is out of sync (CI/pre-commit)
+python build/build.py templatize # rebuild templates from the drowned files
+```
+
+Only the nine per-variant roles (`base`/`surface`/`overlay`/`_nc`, the three
+highlight grays, plus `inactive_tab`/`border`) and the display name differ
+between variants; accents, bright ANSI, and delta's diff tints are shared.
+Adding a variant is a new `[variants.*]` block in `palette.toml` followed by a
+build.
+
+## Install
+
+Each app needs only its one file. The fastest path per app is below; no full
+clone required. Replace the raw URL base if you fork it.
+
+### Neovim
+
+Nothing to download by hand, the plugin manager fetches it. It's self
+contained (no dependencies). With lazy.nvim:
+
+```lua
+{
+	"srlightbody/static-gospel",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		vim.cmd.colorscheme("static-gospel")
+	end,
+}
+```
+
+packer:
+
+```lua
+use({ "srlightbody/static-gospel" })
+-- then: vim.cmd.colorscheme("static-gospel")
+```
+
+### Ghostty
+
+Drop the theme file into ghostty's themes dir and point at it:
+
+```sh
+mkdir -p ~/.config/ghostty/themes
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/ghostty/static-gospel \
+	-o ~/.config/ghostty/themes/static-gospel
+```
+
+```
+# ~/.config/ghostty/config
+theme = static-gospel
+```
+
+Reload with `ctrl+shift+,` (or `cmd+shift+,` on macOS).
+
+### Alacritty (0.13+)
+
+```sh
+mkdir -p ~/.config/alacritty/themes
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/alacritty/static-gospel.toml \
+	-o ~/.config/alacritty/themes/static-gospel.toml
+```
+
+```toml
+# ~/.config/alacritty/alacritty.toml
+[general]
+import = ["~/.config/alacritty/themes/static-gospel.toml"]
+```
+
+### tmux
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/tmux/static-gospel.conf \
+	-o ~/.config/tmux/static-gospel.conf
+```
+
+```
+# ~/.config/tmux/tmux.conf
+source-file ~/.config/tmux/static-gospel.conf
+```
+
+Reload with `tmux source-file ~/.config/tmux/tmux.conf`.
+
+### powerlevel10k
+
+Overrides the colors of your existing generated `~/.p10k.zsh`; flattens the
+rainbow segments onto one muted surface. Source it after p10k's config:
+
+```sh
+mkdir -p ~/.config/zsh
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/p10k/static-gospel.zsh \
+	-o ~/.config/zsh/static-gospel.zsh
+```
+
+```sh
+# ~/.zshrc, after sourcing ~/.p10k.zsh
+source ~/.config/zsh/static-gospel.zsh
+```
+
+### VS Code
+
+Until it's on the marketplace, install it as a local extension by symlinking the
+`vscode/` folder into your extensions dir:
+
+```sh
+git clone https://github.com/srlightbody/static-gospel ~/.static-gospel
+ln -s ~/.static-gospel/vscode ~/.vscode/extensions/static-gospel
+```
+
+Reload the window, then `Ctrl+Shift+P` (`Cmd+Shift+P` on macOS) → "Preferences:
+Color Theme" → Static Gospel.
+
+### Brave / Chromium
+
+A theme extension; needs the whole folder for the variant you want, so clone
+the repo first:
+
+```sh
+git clone https://github.com/srlightbody/static-gospel ~/.static-gospel
+```
+
+Open `brave://extensions` (or `chrome://extensions`), enable Developer mode, click
+"Load unpacked", and select `~/.static-gospel/brave` for the default (drowned)
+theme, or a variant subfolder (`brave/static-gospel-void`, `-abyssal`,
+`-lifted`). Each variant is a separate extension; to switch, load the new one and
+disable the old on the extensions page.
+
+### foot
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/foot/static-gospel.ini \
+	-o ~/.config/foot/static-gospel.ini
+```
+
+```ini
+# ~/.config/foot/foot.ini
+include=~/.config/foot/static-gospel.ini
+```
+
+### kitty
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/kitty/static-gospel.conf \
+	-o ~/.config/kitty/static-gospel.conf
+```
+
+```conf
+# ~/.config/kitty/kitty.conf
+include ./static-gospel.conf
+```
+
+### wezterm
+
+```sh
+mkdir -p ~/.config/wezterm/colors
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/wezterm/static-gospel.toml \
+	-o ~/.config/wezterm/colors/static-gospel.toml
+```
+
+```lua
+-- wezterm.lua
+config.color_scheme = "Static Gospel"
+```
+
+### bat
+
+```sh
+mkdir -p "$(bat --config-dir)/themes"
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/bat/static-gospel.tmTheme \
+	-o "$(bat --config-dir)/themes/static-gospel.tmTheme"
+bat cache --build
+```
+
+```sh
+# ~/.config/bat/config
+--theme="static-gospel"
+```
+
+### delta
+
+Needs the bat theme above (delta uses bat's syntax themes).
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/delta/static-gospel.gitconfig \
+	-o ~/.config/delta/static-gospel.gitconfig
+```
+
+```ini
+# ~/.gitconfig
+[include]
+	path = ~/.config/delta/static-gospel.gitconfig
+```
+
+### lazygit
+
+Keep the theme as a standalone file and layer it over your config (so updates
+never touch your personal settings):
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/lazygit/static-gospel.yml \
+	-o ~/.config/lazygit/static-gospel.yml
+```
+
+```sh
+# in your shell rc (rightmost file wins)
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/static-gospel.yml"
+```
+
+### k9s
+
+```sh
+mkdir -p ~/.config/k9s/skins
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/k9s/static-gospel.yaml \
+	-o ~/.config/k9s/skins/static-gospel.yaml
+```
+
+```yaml
+# ~/.config/k9s/config.yaml
+k9s:
+  ui:
+    skin: static-gospel
+```
+
+### lsd
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/lsd/static-gospel.yaml \
+	-o ~/.config/lsd/colors.yaml
+```
+
+lsd only reads `colors.yaml`, so for a variant save its file (e.g.
+`lsd/static-gospel-void.yaml`) to that same path.
+
+### Noctalia
+
+Drop the colorscheme directory into noctalia's colorschemes folder, then pick it
+in noctalia's settings (noctalia generates the per-terminal files itself):
+
+```sh
+mkdir -p ~/.config/noctalia/colorschemes
+cp -r "noctalia/colorschemes/Static Gospel" ~/.config/noctalia/colorschemes/
+```
+
+## Notes
+
+- The neovim theme is standalone: it vendors and adapts rose-pine/neovim's
+  highlight engine (MIT, see LICENSE) and drives it from the palette above, so
+  there's no runtime dependency and it's free to drift from rose pine over time.
+- Syntax roles: keywords ride `rift` (violet ritual), functions `siren` (magenta
+  wound), types/members/properties `aether_dim` (toxic teal), strings/numbers
+  `witchfire` (gold), errors `ichor` (wound-red). `aether` (electric cyan) and
+  the green cursor/`blight` sit a step hotter as the signals that must always read.
+- ANSI: the blue slot (`color4` = `rift`) is now violet and sits close to the
+  magenta slot (`color5` = `umbra`); a deliberate synthwave tradeoff, nvim
+  accents and the 16-color ANSI are allowed to diverge.
+- The accent keys (`ichor`/`witchfire`/`siren`/`rift`/`aether`/`umbra`/`blight`)
+  carry over from eldritch-rose, themselves eldritch renames of rose pine's
+  love/gold/rose/pine/foam/iris/leaf, kept as a lineage marker even though the
+  colors are now original.

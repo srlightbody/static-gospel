@@ -1,0 +1,1 @@
+require("static-gospel").load()

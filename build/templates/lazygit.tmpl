@@ -1,0 +1,33 @@
+# Static Gospel@@name_suffix@@ - lazygit
+# Keep this as a standalone file and layer it over your config via LG_CONFIG_FILE:
+#   export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/@@slug@@.yml"
+# (rightmost wins) so theme updates never touch your personal config.
+
+gui:
+  theme:
+    activeBorderColor:
+      - "#@@aether@@"
+      - bold
+    inactiveBorderColor:
+      - "#@@ash@@"
+    searchingActiveBorderColor:
+      - "#@@witchfire@@"
+      - bold
+    optionsTextColor:
+      - "#@@rift@@"
+    selectedLineBgColor:
+      - "#@@border@@"
+    cherryPickedCommitFgColor:
+      - "#@@aether@@"
+    cherryPickedCommitBgColor:
+      - "#@@hl_med@@"
+    markedBaseCommitFgColor:
+      - "#@@witchfire@@"
+    markedBaseCommitBgColor:
+      - "#@@hl_med@@"
+    unstagedChangesColor:
+      - "#@@ichor@@"
+    defaultFgColor:
+      - "#@@text@@"
+  authorColors:
+    "*": "#@@umbra@@"
