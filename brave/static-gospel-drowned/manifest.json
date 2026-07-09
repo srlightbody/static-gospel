@@ -1,24 +1,24 @@
 {
 	"manifest_version": 3,
-	"name": "Static Gospel Void",
+	"name": "Static Gospel Drowned",
 	"version": "1.0",
 	"description": "Eldritch cyberpunk: full-chroma occult neon over deep voids.",
 	"theme": {
 		"colors": {
-			"frame": [14, 2, 24],
-			"frame_inactive": [18, 10, 34],
-			"frame_incognito": [38, 35, 58],
-			"frame_incognito_inactive": [30, 22, 50],
-			"toolbar": [23, 17, 43],
+			"frame": [8, 22, 26],
+			"frame_inactive": [12, 28, 34],
+			"frame_incognito": [32, 46, 52],
+			"frame_incognito_inactive": [18, 42, 49],
+			"toolbar": [15, 35, 41],
 			"tab_text": [235, 250, 250],
 			"tab_background_text": [110, 116, 135],
 			"background_tab_text": [110, 116, 135],
 			"bookmark_text": [224, 222, 244],
-			"ntp_background": [14, 2, 24],
+			"ntp_background": [8, 22, 26],
 			"ntp_text": [235, 250, 250],
 			"ntp_link": [157, 107, 255],
-			"ntp_header": [38, 35, 58],
-			"control_background": [38, 35, 58]
+			"ntp_header": [32, 46, 52],
+			"control_background": [32, 46, 52]
 		},
 		"tints": {
 			"buttons": [-1, -1, 0.9]

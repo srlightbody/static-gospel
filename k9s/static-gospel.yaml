@@ -7,35 +7,35 @@
 k9s:
   body:
     fgColor: "#ebfafa"
-    bgColor: "#08161a"
+    bgColor: "#0e0218"
     logoColor: "#04d1f9"
   prompt:
     fgColor: "#ebfafa"
-    bgColor: "#08161a"
+    bgColor: "#0e0218"
     suggestColor: "#b48eff"
   info:
     fgColor: "#04d1f9"
     sectionColor: "#ebfafa"
   dialog:
     fgColor: "#ebfafa"
-    bgColor: "#08161a"
-    buttonFgColor: "#08161a"
+    bgColor: "#0e0218"
+    buttonFgColor: "#0e0218"
     buttonBgColor: "#04d1f9"
-    buttonFocusFgColor: "#08161a"
+    buttonFocusFgColor: "#0e0218"
     buttonFocusBgColor: "#37f499"
     labelFgColor: "#ffce54"
     fieldFgColor: "#ebfafa"
   frame:
     border:
-      fgColor: "#202e34"
+      fgColor: "#26233a"
       focusColor: "#fa4fbc"
     menu:
       fgColor: "#ebfafa"
       keyColor: "#b48eff"
       numKeyColor: "#b48eff"
     crumbs:
-      fgColor: "#08161a"
-      bgColor: "#3e4750"
+      fgColor: "#0e0218"
+      bgColor: "#403d52"
       activeColor: "#04d1f9"
     status:
       newColor: "#04d1f9"
@@ -47,13 +47,13 @@ k9s:
       completedColor: "#6e7487"
     title:
       fgColor: "#ebfafa"
-      bgColor: "#08161a"
+      bgColor: "#0e0218"
       highlightColor: "#ffce54"
       counterColor: "#b48eff"
       filterColor: "#04d1f9"
   views:
     charts:
-      bgColor: "#08161a"
+      bgColor: "#0e0218"
       defaultDialColors:
         - "#04d1f9"
         - "#ff3860"
@@ -62,17 +62,17 @@ k9s:
         - "#ff3860"
     table:
       fgColor: "#ebfafa"
-      bgColor: "#08161a"
-      cursorFgColor: "#08161a"
-      cursorBgColor: "#202e34"
+      bgColor: "#0e0218"
+      cursorFgColor: "#0e0218"
+      cursorBgColor: "#26233a"
       header:
         fgColor: "#ebfafa"
-        bgColor: "#08161a"
+        bgColor: "#0e0218"
         sorterColor: "#37f499"
     xray:
       fgColor: "#ebfafa"
-      bgColor: "#08161a"
-      cursorColor: "#202e34"
+      bgColor: "#0e0218"
+      cursorColor: "#26233a"
       graphicColor: "#04d1f9"
     yaml:
       keyColor: "#9d6bff"
@@ -80,7 +80,7 @@ k9s:
       valueColor: "#ebfafa"
     logs:
       fgColor: "#ebfafa"
-      bgColor: "#08161a"
+      bgColor: "#0e0218"
       indicator:
         fgColor: "#04d1f9"
-        bgColor: "#08161a"
+        bgColor: "#0e0218"

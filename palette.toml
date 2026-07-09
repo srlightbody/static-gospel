@@ -3,7 +3,7 @@
 # Shared colors are identical across variants; only [variants.*] ramps change.
 
 # order controls emission order in palette.lua
-order = ["drowned", "void", "abyssal", "lifted", "void-lifted"]
+order = ["void", "drowned", "abyssal", "lifted", "void-lifted"]
 
 [accents]
 # steel neutrals: recooled off rose pine's warm violet-gray so they read as
@@ -52,8 +52,8 @@ plus       = "#16302a"
 plus_emph  = "#1d4a3e"
 
 [variants.drowned]
-suffix       = ""
-comment      = ["drowned: teal deep (default) — R'lyeh, the sunken"]
+suffix       = "Drowned"
+comment      = ["drowned: teal deep — R'lyeh, the sunken"]
 base         = "#08161a"
 surface      = "#0f2329"
 overlay      = "#163139"
@@ -66,8 +66,8 @@ border       = "#202e34"
 selection    = "#464357"
 
 [variants.void]
-suffix       = "Void"
-comment      = ["void: near-black violet (the original base)"]
+suffix       = ""
+comment      = ["void: near-black violet (default) — night city, the drowned lit up"]
 base         = "#0e0218"
 surface      = "#17112b"
 overlay      = "#241a38"

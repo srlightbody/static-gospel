@@ -1,6 +1,6 @@
-# Static Gospel Void - powerlevel10k
+# Static Gospel Drowned - powerlevel10k
 # Source this AFTER ~/.p10k.zsh (it overrides the generated config's colors):
-#   [[ -f ~/.config/zsh/static-gospel-void.zsh ]] && source ~/.config/zsh/static-gospel-void.zsh
+#   [[ -f ~/.config/zsh/static-gospel-drowned.zsh ]] && source ~/.config/zsh/static-gospel-drowned.zsh
 #
 # Collapses p10k's rainbow to one lit signal bar: every segment sits on the
 # same block (this variant's `hl_med`, a step up from the muted overlay so the
@@ -14,7 +14,7 @@
   # Put every segment on the lit surface individually. NOT via the global
   # POWERLEVEL9K_BACKGROUND, which fills the whole prompt line into one band.
   for v in ${(k)parameters[(I)POWERLEVEL9K_*_BACKGROUND]}; do
-    typeset -g $v='#403d52'
+    typeset -g $v='#3e4750'
   done
   # Drop the generated block-tuned foregrounds; a readable base + accents below.
   for v in ${(k)parameters[(I)POWERLEVEL9K_*_FOREGROUND]}; do
@@ -36,7 +36,7 @@ typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=' '
 
 # Text accents (shared across variants).
 typeset -g POWERLEVEL9K_DIR_FOREGROUND='#ebfafa'
-typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#524f67'
+typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#505a64'
 typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#ebfafa'
 typeset -g POWERLEVEL9K_KUBECONTEXT_FOREGROUND='#66e4fd'
 typeset -g POWERLEVEL9K_TERRAFORM_FOREGROUND='#b48eff'

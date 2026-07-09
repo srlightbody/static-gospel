@@ -1,4 +1,4 @@
-# Static Gospel Void - lsd
+# Static Gospel Drowned - lsd
 # place at ~/.config/lsd/colors.yaml (lsd reads it directly), or point lsd at it.
 
 user: "#ffce54"
@@ -27,7 +27,7 @@ inode:
 links:
   valid: "#b48eff"
   invalid: "#6e7487"
-tree-edge: "#26233a"
+tree-edge: "#202e34"
 git-status:
   default: "#ebfafa"
   unmodified: "#6e7487"

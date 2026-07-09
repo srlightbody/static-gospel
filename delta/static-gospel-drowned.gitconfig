@@ -1,12 +1,12 @@
-# Static Gospel Void - delta
+# Static Gospel Drowned - delta
 # include from ~/.gitconfig:
 #   [include]
-#       path = ~/.config/delta/static-gospel-void.gitconfig
-# syntax-theme expects static-gospel-void.tmTheme on the bat themes path (bat names themes
+#       path = ~/.config/delta/static-gospel-drowned.gitconfig
+# syntax-theme expects static-gospel-drowned.tmTheme on the bat themes path (bat names themes
 # by file stem).
 
 [delta]
-	syntax-theme = static-gospel-void
+	syntax-theme = static-gospel-drowned
 	line-numbers = true
 
 	minus-style = syntax "#3a1f2a"
@@ -17,13 +17,13 @@
 	line-numbers-minus-style = "#ff3860"
 	line-numbers-plus-style = "#37f499"
 	line-numbers-zero-style = "#6e7487"
-	line-numbers-left-style = "#26233a"
-	line-numbers-right-style = "#26233a"
+	line-numbers-left-style = "#202e34"
+	line-numbers-right-style = "#202e34"
 
 	file-style = "#04d1f9" bold
-	file-decoration-style = "#26233a" ul
+	file-decoration-style = "#202e34" ul
 	hunk-header-style = "#b48eff" bold
-	hunk-header-decoration-style = "#26233a" box
+	hunk-header-decoration-style = "#202e34" box
 
 	zero-style = syntax
 	whitespace-error-style = "#ff3860" reverse

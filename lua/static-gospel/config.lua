@@ -15,7 +15,7 @@ config.options = {
 
 	---Variant used when `options.variant` is "auto".
 	---@type Variant
-	dark_variant = "drowned",
+	dark_variant = "void",
 
 	---Differentiate between active and inactive windows and panels.
 	dim_inactive_windows = false,

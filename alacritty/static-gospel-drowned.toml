@@ -1,20 +1,20 @@
-# Static Gospel Void - alacritty (0.13+)
+# Static Gospel Drowned - alacritty (0.13+)
 # static gospel: full-chroma occult neon over deep voids
 
 [colors.primary]
-background = "#0e0218"
+background = "#08161a"
 foreground = "#ebfafa"
 
 [colors.cursor]
-text   = "#0e0218"
+text   = "#08161a"
 cursor = "#37f499"
 
 [colors.selection]
 text       = "#e0def4"
-background  = "#413d51"
+background  = "#464357"
 
 [colors.normal]
-black   = "#26233a"
+black   = "#202e34"
 red     = "#ff3860"
 green   = "#37f499"
 yellow  = "#ffce54"

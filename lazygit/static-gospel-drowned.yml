@@ -1,6 +1,6 @@
-# Static Gospel Void - lazygit
+# Static Gospel Drowned - lazygit
 # Keep this as a standalone file and layer it over your config via LG_CONFIG_FILE:
-#   export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/static-gospel-void.yml"
+#   export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/static-gospel-drowned.yml"
 # (rightmost wins) so theme updates never touch your personal config.
 
 gui:
@@ -16,15 +16,15 @@ gui:
     optionsTextColor:
       - "#9d6bff"
     selectedLineBgColor:
-      - "#26233a"
+      - "#202e34"
     cherryPickedCommitFgColor:
       - "#04d1f9"
     cherryPickedCommitBgColor:
-      - "#403d52"
+      - "#3e4750"
     markedBaseCommitFgColor:
       - "#ffce54"
     markedBaseCommitBgColor:
-      - "#403d52"
+      - "#3e4750"
     unstagedChangesColor:
       - "#ff3860"
     defaultFgColor:

@@ -33,17 +33,17 @@ local shared = {
 
 -- per-variant dark ramp
 local ramps = {
-	-- drowned: teal deep (default) — R'lyeh, the sunken
-	drowned = {
-		base = "#08161a", surface = "#0f2329", overlay = "#163139", _nc = "#050f12",
-		highlight_low = "#20262a", highlight_med = "#3e4750", highlight_high = "#505a64",
-		border = "#202e34",
-	},
-	-- void: near-black violet (the original base)
+	-- void: near-black violet (default) — night city, the drowned lit up
 	void = {
 		base = "#0e0218", surface = "#17112b", overlay = "#241a38", _nc = "#0a0214",
 		highlight_low = "#21202e", highlight_med = "#403d52", highlight_high = "#524f67",
 		border = "#26233a",
+	},
+	-- drowned: teal deep — R'lyeh, the sunken
+	drowned = {
+		base = "#08161a", surface = "#0f2329", overlay = "#163139", _nc = "#050f12",
+		highlight_low = "#20262a", highlight_med = "#3e4750", highlight_high = "#505a64",
+		border = "#202e34",
 	},
 	-- abyssal: deep cosmic blue
 	abyssal = {

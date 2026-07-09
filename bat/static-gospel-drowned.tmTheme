@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Static Gospel Void</string>
+	<string>Static Gospel Drowned</string>
 	<key>settings</key>
 	<array>
 		<dict>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#0e0218</string>
+				<string>#08161a</string>
 				<key>foreground</key>
 				<string>#ebfafa</string>
 				<key>caret</key>
 				<string>#37f499</string>
 				<key>lineHighlight</key>
-				<string>#1f1d2e</string>
+				<string>#0d1f25</string>
 				<key>selection</key>
-				<string>#413d51</string>
+				<string>#464357</string>
 				<key>gutterForeground</key>
 				<string>#6e7487</string>
 			</dict>
