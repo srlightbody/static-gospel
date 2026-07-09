@@ -16,6 +16,8 @@ highlight engine is adapted from [rosé-pine/neovim](https://github.com/rose-pin
 
 ## Palette
 
+![Static Gospel palette](palette.svg)
+
 Accents are shared across every variant; only `base`/`surface`/`overlay`/grays
 change per ramp. Values below pair the accents with the **void** base.
 
@@ -64,8 +66,8 @@ Prefer them on non-OLED displays.
 | lifted  | `#0c2126` | drowned, tuned for LCD |
 | void-lifted | `#251631` | void, tuned for LCD |
 
-![drowned](assets/preview-drowned.png)
 ![void](assets/preview-void.png)
+![drowned](assets/preview-drowned.png)
 ![abyssal](assets/preview-abyssal.png)
 ![void-lifted](assets/preview-void-lifted.png)
 
@@ -81,8 +83,7 @@ vim.cmd.colorscheme("static-gospel")
 **Everything else** ships a file per variant next to the default (which is
 void), e.g. `ghostty/static-gospel-drowned`, `bat/static-gospel-abyssal.tmTheme`,
 `noctalia/colorschemes/Static Gospel Abyssal`, `brave/static-gospel-abyssal/`.
-Point your app at the variant file instead of the default. (VS Code still ships
-the old drowned colors and is pending a regen.)
+Point your app at the variant file instead of the default.
 
 ## Building
 
@@ -192,19 +193,6 @@ curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/p10k
 # ~/.zshrc, after sourcing ~/.p10k.zsh
 source ~/.config/zsh/static-gospel.zsh
 ```
-
-### VS Code
-
-Until it's on the marketplace, install it as a local extension by symlinking the
-`vscode/` folder into your extensions dir:
-
-```sh
-git clone https://github.com/srlightbody/static-gospel ~/.static-gospel
-ln -s ~/.static-gospel/vscode ~/.vscode/extensions/static-gospel
-```
-
-Reload the window, then `Ctrl+Shift+P` (`Cmd+Shift+P` on macOS) → "Preferences:
-Color Theme" → Static Gospel.
 
 ### Brave / Chromium
 

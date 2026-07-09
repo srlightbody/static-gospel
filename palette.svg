@@ -1,85 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="844" height="480" viewBox="0 0 844 480">
-  <rect width="844" height="480" fill="#08161a"/>
-
-  <!-- Title -->
-  <text x="422" y="40" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#ebfafa" font-weight="bold" letter-spacing="3">static-gospel palette</text>
-
-  <!-- BACKGROUNDS row label -->
-  <text x="24" y="68" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a" letter-spacing="2">BACKGROUNDS</text>
-
-  <!-- base -->
-  <rect x="24"  y="80" width="100" height="70" rx="4" fill="#08161a" stroke="#505a64" stroke-width="1"/>
-  <text x="74"  y="165" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">base</text>
-  <text x="74"  y="179" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#08161a</text>
-
-  <!-- surface -->
-  <rect x="140" y="80" width="100" height="70" rx="4" fill="#0f2329" stroke="#505a64" stroke-width="1"/>
-  <text x="190" y="165" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">surface</text>
-  <text x="190" y="179" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#0f2329</text>
-
-  <!-- overlay -->
-  <rect x="256" y="80" width="100" height="70" rx="4" fill="#163139" stroke="#505a64" stroke-width="1"/>
-  <text x="306" y="165" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">overlay</text>
-  <text x="306" y="179" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#163139</text>
-
-  <!-- selection -->
-  <rect x="372" y="80" width="100" height="70" rx="4" fill="#464357" stroke="#505a64" stroke-width="1"/>
-  <text x="422" y="165" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">selection</text>
-  <text x="422" y="179" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#464357</text>
-
-  <!-- NEUTRALS row label -->
-  <text x="24" y="208" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a" letter-spacing="2">NEUTRALS</text>
-
-  <!-- text -->
-  <rect x="24"  y="220" width="100" height="70" rx="4" fill="#ebfafa" stroke="#908e9d" stroke-width="1"/>
-  <text x="74"  y="305" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">text</text>
-  <text x="74"  y="319" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#ebfafa</text>
-
-  <!-- shroud -->
-  <rect x="140" y="220" width="100" height="70" rx="4" fill="#908e9d" stroke="#505a64" stroke-width="1"/>
-  <text x="190" y="305" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">shroud</text>
-  <text x="190" y="319" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#908e9d</text>
-
-  <!-- ash -->
-  <rect x="256" y="220" width="100" height="70" rx="4" fill="#6e6c7a" stroke="#505a64" stroke-width="1"/>
-  <text x="306" y="305" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">ash</text>
-  <text x="306" y="319" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#6e6c7a</text>
-
-  <!-- ACCENTS row label -->
-  <text x="24" y="348" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a" letter-spacing="2">ACCENTS</text>
-
-  <!-- ichor -->
-  <rect x="24"  y="360" width="100" height="70" rx="4" fill="#d68095" stroke="#505a64" stroke-width="1"/>
-  <text x="74"  y="445" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">ichor</text>
-  <text x="74"  y="459" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#d68095</text>
-
-  <!-- witchfire -->
-  <rect x="140" y="360" width="100" height="70" rx="4" fill="#e8be22" stroke="#505a64" stroke-width="1"/>
-  <text x="190" y="445" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">witchfire</text>
-  <text x="190" y="459" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#e8be22</text>
-
-  <!-- blight -->
-  <rect x="256" y="360" width="100" height="70" rx="4" fill="#37f499" stroke="#505a64" stroke-width="1"/>
-  <text x="306" y="445" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">blight</text>
-  <text x="306" y="459" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#37f499</text>
-
-  <!-- aether -->
-  <rect x="372" y="360" width="100" height="70" rx="4" fill="#04d1f9" stroke="#505a64" stroke-width="1"/>
-  <text x="422" y="445" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">aether</text>
-  <text x="422" y="459" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#04d1f9</text>
-
-  <!-- rift -->
-  <rect x="488" y="360" width="100" height="70" rx="4" fill="#638fdf" stroke="#505a64" stroke-width="1"/>
-  <text x="538" y="445" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">rift</text>
-  <text x="538" y="459" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#638fdf</text>
-
-  <!-- umbra -->
-  <rect x="604" y="360" width="100" height="70" rx="4" fill="#a293da" stroke="#505a64" stroke-width="1"/>
-  <text x="654" y="445" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">umbra</text>
-  <text x="654" y="459" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#a293da</text>
-
-  <!-- siren -->
-  <rect x="720" y="360" width="100" height="70" rx="4" fill="#e39cc3" stroke="#505a64" stroke-width="1"/>
-  <text x="770" y="445" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" fill="#ebfafa">siren</text>
-  <text x="770" y="459" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" fill="#6e6c7a">#e39cc3</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" font-family="JetBrains Mono, DejaVu Sans Mono, monospace">
+<rect width="900" height="620" fill="#0e0218"/>
+<text x="450.0" y="52" fill="#ebfafa" font-size="30" text-anchor="middle" letter-spacing="4" font-weight="bold">Static Gospel</text>
+<text x="450.0" y="82" fill="#97a0b6" font-size="16" text-anchor="middle">eldritch cyberpunk — full-chroma occult neon over deep voids (void base shown)</text>
+<text x="40" y="106" fill="#97a0b6" font-size="14" letter-spacing="2">RAMP + NEUTRALS (void)</text>
+<rect x="40" y="120" width="110" height="70" rx="5" fill="#0e0218" stroke="#2a2340" stroke-width="1"/>
+<text x="95.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">base</text>
+<text x="95.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#0e0218</text>
+<rect x="158" y="120" width="110" height="70" rx="5" fill="#17112b" stroke="#2a2340" stroke-width="1"/>
+<text x="213.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">surface</text>
+<text x="213.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#17112b</text>
+<rect x="276" y="120" width="110" height="70" rx="5" fill="#241a38" stroke="#2a2340" stroke-width="1"/>
+<text x="331.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">overlay</text>
+<text x="331.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#241a38</text>
+<rect x="394" y="120" width="110" height="70" rx="5" fill="#413d51" stroke="#2a2340" stroke-width="1"/>
+<text x="449.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">selection</text>
+<text x="449.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#413d51</text>
+<rect x="512" y="120" width="110" height="70" rx="5" fill="#6e7487" stroke="#2a2340" stroke-width="1"/>
+<text x="567.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">ash</text>
+<text x="567.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#6e7487</text>
+<rect x="630" y="120" width="110" height="70" rx="5" fill="#97a0b6" stroke="#2a2340" stroke-width="1"/>
+<text x="685.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">shroud</text>
+<text x="685.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#97a0b6</text>
+<rect x="748" y="120" width="110" height="70" rx="5" fill="#ebfafa" stroke="#2a2340" stroke-width="1"/>
+<text x="803.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">text</text>
+<text x="803.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#ebfafa</text>
+<text x="40" y="276" fill="#97a0b6" font-size="14" letter-spacing="2">ACCENTS (shared across variants)</text>
+<rect x="40" y="290" width="200" height="90" rx="6" fill="#ff3860"/>
+<text x="140.0" y="400" fill="#ebfafa" font-size="14" text-anchor="middle">ichor</text>
+<text x="140.0" y="418" fill="#97a0b6" font-size="12" text-anchor="middle">#ff3860 · errors</text>
+<rect x="255" y="290" width="200" height="90" rx="6" fill="#ffce54"/>
+<text x="355.0" y="400" fill="#ebfafa" font-size="14" text-anchor="middle">witchfire</text>
+<text x="355.0" y="418" fill="#97a0b6" font-size="12" text-anchor="middle">#ffce54 · strings</text>
+<rect x="470" y="290" width="200" height="90" rx="6" fill="#fa4fbc"/>
+<text x="570.0" y="400" fill="#ebfafa" font-size="14" text-anchor="middle">siren</text>
+<text x="570.0" y="418" fill="#97a0b6" font-size="12" text-anchor="middle">#fa4fbc · functions</text>
+<rect x="685" y="290" width="200" height="90" rx="6" fill="#9d6bff"/>
+<text x="785.0" y="400" fill="#ebfafa" font-size="14" text-anchor="middle">rift</text>
+<text x="785.0" y="418" fill="#97a0b6" font-size="12" text-anchor="middle">#9d6bff · keywords</text>
+<rect x="40" y="420" width="200" height="90" rx="6" fill="#04d1f9"/>
+<text x="140.0" y="530" fill="#ebfafa" font-size="14" text-anchor="middle">aether</text>
+<text x="140.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#04d1f9 · signal</text>
+<rect x="255" y="420" width="200" height="90" rx="6" fill="#22e0c0"/>
+<text x="355.0" y="530" fill="#ebfafa" font-size="14" text-anchor="middle">verdigris</text>
+<text x="355.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#22e0c0 · types</text>
+<rect x="470" y="420" width="200" height="90" rx="6" fill="#b48eff"/>
+<text x="570.0" y="530" fill="#ebfafa" font-size="14" text-anchor="middle">umbra</text>
+<text x="570.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#b48eff · directives</text>
+<rect x="685" y="420" width="200" height="90" rx="6" fill="#37f499"/>
+<text x="785.0" y="530" fill="#ebfafa" font-size="14" text-anchor="middle">blight</text>
+<text x="785.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#37f499 · cursor/alive</text>
 </svg>
