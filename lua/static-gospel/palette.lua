@@ -58,11 +58,11 @@ local ramps = {
 		highlight_low = "#262d31", highlight_med = "#3e4750", highlight_high = "#505a65",
 		border = "#26363d",
 	},
-	-- void-lifted: void's violet on lifted's raised L* ladder (void C/H per role,
-	-- lifted L), so the violet survives low-contrast LCD panels like lifted does
-	-- for drowned.
+	-- void-lifted: void's violet with the mid-tones on lifted's raised L* ladder
+	-- (void C/H per role) but the floor only raised halfway- full lifted base felt
+	-- washed on the laptop panel, and the deeper base widens the base->surface step.
 	["void-lifted"] = {
-		base = "#251631", surface = "#292440", overlay = "#382e4e", _nc = "#1a0e25",
+		base = "#190a24", surface = "#292440", overlay = "#382e4e", _nc = "#12071c",
 		highlight_low = "#2b2a38", highlight_med = "#464358", highlight_high = "#58556e",
 		border = "#333048",
 	},
