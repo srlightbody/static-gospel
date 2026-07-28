@@ -7,21 +7,21 @@
 k9s:
   body:
     fgColor: "#ebfafa"
-    bgColor: "#0e0218"
+    bgColor: "#130420"
     logoColor: "#04d1f9"
   prompt:
     fgColor: "#ebfafa"
-    bgColor: "#0e0218"
+    bgColor: "#130420"
     suggestColor: "#b48eff"
   info:
     fgColor: "#04d1f9"
     sectionColor: "#ebfafa"
   dialog:
     fgColor: "#ebfafa"
-    bgColor: "#0e0218"
-    buttonFgColor: "#0e0218"
+    bgColor: "#130420"
+    buttonFgColor: "#130420"
     buttonBgColor: "#04d1f9"
-    buttonFocusFgColor: "#0e0218"
+    buttonFocusFgColor: "#130420"
     buttonFocusBgColor: "#37f499"
     labelFgColor: "#ffce54"
     fieldFgColor: "#ebfafa"
@@ -34,7 +34,7 @@ k9s:
       keyColor: "#b48eff"
       numKeyColor: "#b48eff"
     crumbs:
-      fgColor: "#0e0218"
+      fgColor: "#130420"
       bgColor: "#403d52"
       activeColor: "#04d1f9"
     status:
@@ -47,13 +47,13 @@ k9s:
       completedColor: "#6e7487"
     title:
       fgColor: "#ebfafa"
-      bgColor: "#0e0218"
+      bgColor: "#130420"
       highlightColor: "#ffce54"
       counterColor: "#b48eff"
       filterColor: "#04d1f9"
   views:
     charts:
-      bgColor: "#0e0218"
+      bgColor: "#130420"
       defaultDialColors:
         - "#04d1f9"
         - "#ff3860"
@@ -62,16 +62,16 @@ k9s:
         - "#ff3860"
     table:
       fgColor: "#ebfafa"
-      bgColor: "#0e0218"
-      cursorFgColor: "#0e0218"
+      bgColor: "#130420"
+      cursorFgColor: "#130420"
       cursorBgColor: "#26233a"
       header:
         fgColor: "#ebfafa"
-        bgColor: "#0e0218"
+        bgColor: "#130420"
         sorterColor: "#37f499"
     xray:
       fgColor: "#ebfafa"
-      bgColor: "#0e0218"
+      bgColor: "#130420"
       cursorColor: "#26233a"
       graphicColor: "#04d1f9"
     yaml:
@@ -80,7 +80,7 @@ k9s:
       valueColor: "#ebfafa"
     logs:
       fgColor: "#ebfafa"
-      bgColor: "#0e0218"
+      bgColor: "#130420"
       indicator:
         fgColor: "#04d1f9"
-        bgColor: "#0e0218"
+        bgColor: "#130420"

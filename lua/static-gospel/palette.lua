@@ -35,7 +35,7 @@ local shared = {
 local ramps = {
 	-- void: near-black violet (default) — night city, the drowned lit up
 	void = {
-		base = "#0e0218", surface = "#17112b", overlay = "#241a38", _nc = "#0a0214",
+		base = "#130420", surface = "#17112b", overlay = "#241a38", _nc = "#0a0214",
 		highlight_low = "#21202e", highlight_med = "#403d52", highlight_high = "#524f67",
 		border = "#26233a",
 	},

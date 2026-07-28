@@ -7,9 +7,9 @@ author = "Sam Lightbody"
 
 [colors]
 foreground = "#ebfafa"
-background = "#0e0218"
+background = "#130420"
 cursor_bg = "#37f499"
-cursor_fg = "#0e0218"
+cursor_fg = "#130420"
 cursor_border = "#37f499"
 selection_fg = "#e0def4"
 selection_bg = "#413d51"

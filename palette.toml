@@ -68,7 +68,7 @@ selection    = "#464357"
 [variants.void]
 suffix       = ""
 comment      = ["void: near-black violet (default) — night city, the drowned lit up"]
-base         = "#0e0218"
+base         = "#130420"
 surface      = "#17112b"
 overlay      = "#241a38"
 _nc          = "#0a0214"

@@ -32,6 +32,8 @@ APPS = {
     "lsd":       ("lsd", ".yaml"),
     "noctalia":  ("noctalia", ".json"),  # special path handling below
     "p10k":      ("p10k", ".zsh"),
+    "qt6ct":     ("qt6ct", ".conf"),
+    "gtk":       ("gtk", ".css"),
 }
 
 
