@@ -10,15 +10,14 @@ Forked from [eldritch-rose](https://github.com/srlightbody/eldritch-rose) when
 the palette went full chroma and stopped being a muted rose pine variant.
 eldritch-rose is still around if you want the quiet version. The neovim
 highlight engine is adapted from [rosé-pine/neovim](https://github.com/rose-pine/neovim)
-(MIT, see `LICENSE`), the palette is mine.
+(MIT, see `LICENSE`), the colors aren't.
 
 ## Who it's for
 
-Mostly me. I built it for my own eyes and my own work, a lot of terraform and a
-lot of terminal time. It's public because it's good and someone might want it,
-but I'm not running it as a project or chasing feature requests- if you want to
-add something, throw a PR up and I'll probably take it, or fork it and do
-whatever, it's MIT.
+Mostly me. It's tuned to my setup and the stuff I look at all day, a lot of
+terraform and a lot of terminal. It's up here in case someone else wants it, but
+I'm not really running it as a project- throw a PR up if you want to add
+something and I'll probably take it, or fork it and do whatever, it's MIT.
 
 ## Palette
 
@@ -61,8 +60,8 @@ bright   8 #6e7487  9 #ff5c78 10 #69f8b3 11 #ffe08a 12 #b892ff 13 #ff86d4 14 #66
 Accents are identical everywhere; only the background ramp changes. **void**
 is the default. **lifted** and **void-lifted** are drowned's and void's ramps
 with the floor raised ~5 L* and the steps widened, so the depth survives on LCD
-and laptop panels instead of crushing to flat grey. Use them on anything that
-isn't OLED.
+and laptop panels instead of crushing to flat grey. Worth using on anything
+that isn't OLED.
 
 | Variant | base | feel |
 |---------|-----------|-----------------------|
@@ -94,7 +93,7 @@ Point your app at the variant file instead of the default one.
 ## Building
 
 Every app file is generated from `palette.toml`, so a color gets changed once
-and lands everywhere. Don't hand edit the per-app theme files, edit
+and shows up everywhere. Don't hand edit the per-app theme files, edit
 `palette.toml` (or `build/templates/*.tmpl` for structure) and rebuild:
 
 ```bash
@@ -337,9 +336,9 @@ cp -r "noctalia/colorschemes/Static Gospel" ~/.config/noctalia/colorschemes/
   wound), types/members/properties `verdigris` (toxic teal), strings/numbers
   `witchfire` (gold), errors `ichor` (wound-red).
 - ANSI: the blue slot (`color4` = `rift`) is violet and sits close to the
-  magenta slot (`color5` = `umbra`). Tradeoff I took on purpose for the
-  synthwave look, nvim accents and the 16-color ANSI don't have to match.
+  magenta slot (`color5` = `umbra`). That's for the synthwave look, nvim accents
+  and the 16-color ANSI don't have to match.
 - The accent keys (`ichor`/`witchfire`/`siren`/`rift`/`aether`/`umbra`/`blight`)
   carry over from eldritch-rose, which renamed rose pine's
-  love/gold/rose/pine/foam/iris/leaf. None of the colors are the same anymore, I
-  kept the names anyway.
+  love/gold/rose/pine/foam/iris/leaf. None of the colors are the same anymore,
+  the names stuck.
