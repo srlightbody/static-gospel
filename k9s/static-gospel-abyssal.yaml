@@ -35,7 +35,7 @@ k9s:
       numKeyColor: "#b48eff"
     crumbs:
       fgColor: "#0a1020"
-      bgColor: "#3a4358"
+      bgColor: "#6e7487"
       activeColor: "#04d1f9"
     status:
       newColor: "#04d1f9"
@@ -63,8 +63,8 @@ k9s:
     table:
       fgColor: "#ebfafa"
       bgColor: "#0a1020"
-      cursorFgColor: "#0a1020"
-      cursorBgColor: "#222a3a"
+      cursorFgColor: "#ebfafa"
+      cursorBgColor: "#444055"
       header:
         fgColor: "#ebfafa"
         bgColor: "#0a1020"
@@ -72,7 +72,7 @@ k9s:
     xray:
       fgColor: "#ebfafa"
       bgColor: "#0a1020"
-      cursorColor: "#222a3a"
+      cursorColor: "#444055"
       graphicColor: "#04d1f9"
     yaml:
       keyColor: "#9d6bff"

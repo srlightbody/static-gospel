@@ -1,7 +1,7 @@
 -- Static Gospel palette: shared cyberpunk accents over a selectable dark ramp.
 -- Variants change ONLY the ramp (base/surface/overlay/_nc + highlight grays);
 -- accents and neutrals are shared. Select with:
---   require("static-gospel").setup({ variant = "void" })  -- or abyssal / lifted
+--   require("static-gospel").setup({ variant = "drowned" })  -- or abyssal / lifted / void-lifted (void is the default)
 local config = require("static-gospel.config")
 
 -- accents + neutrals, identical across every variant
@@ -75,7 +75,7 @@ local built = {}
 return function()
 	local v = config.options.variant
 	if v == "auto" then v = config.options.dark_variant end
-	if not ramps[v] then v = "drowned" end
+	if not ramps[v] then v = "void" end
 	if not built[v] then
 		built[v] = vim.tbl_extend("force", {}, ramps[v], shared)
 	end

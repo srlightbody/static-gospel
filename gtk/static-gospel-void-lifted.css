@@ -4,15 +4,15 @@
  */
 
 @define-color accent_color #04d1f9;
-@define-color accent_fg_color #251631;
+@define-color accent_fg_color #190a24;
 @define-color accent_bg_color #04d1f9;
-@define-color window_bg_color #251631;
+@define-color window_bg_color #190a24;
 @define-color window_fg_color #ebfafa;
 @define-color headerbar_bg_color #292440;
 @define-color headerbar_fg_color #ebfafa;
 @define-color popover_bg_color #382e4e;
 @define-color popover_fg_color #ebfafa;
-@define-color view_bg_color #251631;
+@define-color view_bg_color #190a24;
 @define-color view_fg_color #ebfafa;
 @define-color card_bg_color #292440;
 @define-color card_fg_color #ebfafa;

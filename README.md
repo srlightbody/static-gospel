@@ -30,7 +30,7 @@ change per ramp. Values below pair the accents with the **void** base.
 
 | Role                | Hex       | Note                |
 |---------------------|-----------|---------------------|
-| base (bg)           | `#0e0218` | void                |
+| base (bg)           | `#130420` | void                |
 | surface             | `#17112b` | void                |
 | overlay             | `#241a38` | void                |
 | ash                 | `#6e7487` | steel neutral       |
@@ -67,11 +67,11 @@ Prefer them on non-OLED displays.
 
 | Variant | base | feel |
 |---------|-----------|-----------------------|
-| void *(default)* | `#0e0218` | near-black violet, night city |
-| drowned | `#08161a` | teal deep, the sunken |
+| void *(default)* | `#130420` | near-black violet, night city |
+| drowned | `#111a1e` | teal deep, the sunken |
 | abyssal | `#0a1020` | deep cosmic blue |
 | lifted  | `#0c2126` | drowned, tuned for LCD |
-| void-lifted | `#251631` | void, tuned for LCD |
+| void-lifted | `#190a24` | void, tuned for LCD |
 
 ![void](assets/preview-void.png)
 ![drowned](assets/preview-drowned.png)

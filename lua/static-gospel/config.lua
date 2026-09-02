@@ -1,13 +1,13 @@
 ---@alias Variant "drowned" | "void" | "abyssal" | "lifted" | "void-lifted"
----@alias Palette { base: string, surface: string, overlay: string, ash: string, shroud: string, text: string, ichor: string, witchfire: string, siren: string, rift: string, aether: string, umbra: string, blight: string }
----@alias PaletteColor "base" | "surface" | "overlay" | "ash" | "shroud" | "text" | "ichor" | "witchfire" | "siren" | "rift" | "aether" | "umbra" | "highlight_low" | "highlight_med" | "highlight_high"
+---@alias Palette { base: string, surface: string, overlay: string, _nc: string, border: string, highlight_low: string, highlight_med: string, highlight_high: string, ash: string, shroud: string, text: string, ichor: string, witchfire: string, siren: string, rift: string, aether: string, verdigris: string, umbra: string, blight: string }
+---@alias PaletteColor "base" | "surface" | "overlay" | "border" | "ash" | "shroud" | "text" | "ichor" | "witchfire" | "siren" | "rift" | "aether" | "verdigris" | "umbra" | "blight" | "highlight_low" | "highlight_med" | "highlight_high"
 ---@alias Highlight { link: string, inherit: boolean } | { fg: string, bg: string, sp: string, bold: boolean, italic: boolean, undercurl: boolean, underline: boolean, underdouble: boolean, underdotted: boolean, underdashed: boolean, strikethrough: boolean, inherit: boolean }
 
 local config = {}
 
 ---@class Options
 config.options = {
-	---Set the desired variant: "drowned" (teal, default), "void" (violet),
+	---Set the desired variant: "void" (violet, default), "drowned" (teal),
 	---"abyssal" (blue), or the raised-floor LCD versions "lifted" (drowned)
 	---and "void-lifted" (void). "auto" resolves to `dark_variant`.
 	---@type "auto" | Variant

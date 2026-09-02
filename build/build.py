@@ -3,10 +3,10 @@
 
   python build/build.py            # write all app files + palette.lua
   python build/build.py check      # verify working tree matches (CI/pre-commit)
-  python build/build.py templatize # regenerate templates from current drowned files
+  python build/build.py templatize # regenerate templates from the default (void) files
 
-Only the 9 per-variant roles (base/surface/overlay/_nc/hl_low/hl_med/hl_high +
-inactive_tab/border) and the display name vary between variants; everything else
+Only the 10 per-variant roles (base/surface/overlay/_nc/hl_low/hl_med/hl_high +
+inactive_tab/border/selection) and the display name vary between variants; everything else
 is shared. Templates carry @@role@@ placeholders so a round-trip is byte-exact.
 """
 import sys, tomllib, difflib
@@ -17,7 +17,7 @@ TPL = Path(__file__).resolve().parent / "templates"
 ROLES = ["base", "surface", "overlay", "_nc", "hl_low", "hl_med", "hl_high",
          "inactive_tab", "border", "selection"]
 
-# app -> (theme dir, file extension). The default (drowned) file has no suffix.
+# app -> (theme dir, file extension). The default (void, empty suffix) file has no suffix.
 APPS = {
     "alacritty": ("alacritty", ".toml"),
     "kitty":     ("kitty", ".conf"),
@@ -51,6 +51,11 @@ def shared_colors(pal):
     for k, v in pal["delta"].items():
         out[f"d_{k}"] = v
     return out
+
+
+def default_variant(pal):
+    """The variant with an empty suffix owns the un-suffixed files."""
+    return next(v for v in pal["variants"].values() if not v["suffix"])
 
 
 def slugify(suffix):
@@ -158,7 +163,7 @@ def build_lua(pal):
     add("-- Static Gospel palette: shared cyberpunk accents over a selectable dark ramp.")
     add("-- Variants change ONLY the ramp (base/surface/overlay/_nc + highlight grays);")
     add("-- accents and neutrals are shared. Select with:")
-    add('--   require("static-gospel").setup({ variant = "void" })  -- or abyssal / lifted')
+    add('--   require("static-gospel").setup({ variant = "drowned" })  -- or abyssal / lifted / void-lifted (void is the default)')
     add('local config = require("static-gospel.config")')
     add("")
     add("-- accents + neutrals, identical across every variant")
@@ -199,7 +204,7 @@ def build_lua(pal):
     add("return function()")
     add("\tlocal v = config.options.variant")
     add('\tif v == "auto" then v = config.options.dark_variant end')
-    add('\tif not ramps[v] then v = "drowned" end')
+    add('\tif not ramps[v] then v = "void" end')
     add("\tif not built[v] then")
     add("\t\tbuilt[v] = vim.tbl_extend(\"force\", {}, ramps[v], shared)")
     add("\tend")
@@ -247,8 +252,8 @@ def cmd_check(pal):
 
 
 def cmd_templatize(pal):
-    """Rebuild templates from the current drowned files (dev-only)."""
-    d = pal["variants"]["drowned"]
+    """Rebuild templates from the current default-variant files (dev-only)."""
+    d = default_variant(pal)
     # roles first, then shared; on a hex collision (cursor==blight) the first
     # wins, keeping a single deterministic placeholder per hex.
     hex_to_ph = {}
