@@ -10,11 +10,8 @@ I turned the saturation up; that one's still around if you want it muted. The
 neovim highlight engine is adapted from [rosé-pine/neovim](https://github.com/rose-pine/neovim)
 (MIT, see `LICENSE`), the colors aren't.
 
-## Who it's for
-
-Mostly me, it's tuned to my setup. Up here in case someone else wants it, but
-I'm not really running it as a project- throw a PR up and I'll probably take it,
-or fork it and do whatever, it's MIT.
+It's tuned to my setup and I'm not really running it as a project, but throw a
+PR up and I'll probably take it, or fork it and do whatever, it's MIT.
 
 ## Palette
 
