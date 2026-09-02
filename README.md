@@ -1,12 +1,12 @@
 # Static Gospel
 
-Dark theme, cthulhu cult on cyberpunk tech. Loud accents over a nearly black
-background. Covers nvim, terminals, git tools, the prompt and the WM. Five
+The dark theme I use for everything: near black backgrounds with the accents
+turned way up. Covers nvim, terminals, git tools, the prompt and the WM. Five
 ramps: **void** (violet black, default), **drowned** (teal), **abyssal** (blue),
 plus **lifted** and **void-lifted** for LCD panels that wash the dark out.
 
 Forked from [eldritch-rose](https://github.com/srlightbody/eldritch-rose) when
-the palette went full chroma; that one's still around if you want it muted. The
+I turned the saturation up; that one's still around if you want it muted. The
 neovim highlight engine is adapted from [rosé-pine/neovim](https://github.com/rose-pine/neovim)
 (MIT, see `LICENSE`), the colors aren't.
 
@@ -41,8 +41,9 @@ change. Table below is the **void** base.
 | blight / cursor     | `#37f499` | the one alive thing |
 | selection (void)    | `#413d51` | violet tint         |
 
-Full chroma, so hue does the separating. The green cursor and `aether` sit a
-step hotter so they always read.
+Nothing is toned down, so the colors are told apart by hue instead of
+brightness. The green cursor and `aether` sit a step hotter so they always
+read.
 
 ### 16-color ANSI (void)
 
