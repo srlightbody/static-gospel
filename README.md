@@ -1,32 +1,31 @@
 # Static Gospel
 
-A dark theme, cthulhu cult running on cyberpunk tech. Loud, saturated accents
-over nearly black backgrounds, tuned to read bright instead of muted. It covers
-most of what I stare at all day: nvim, terminals, git tools, the prompt, the WM.
-Five ramps: **void** (violet black, the default), **drowned** (teal), **abyssal**
-(blue), plus **lifted** and **void-lifted**, raised off the floor for LCD panels
-that wash the dark out.
+A dark theme, cthulhu cult running on cyberpunk tech. Loud saturated accents
+over nearly black backgrounds, bright rather than muted. Covers nvim, terminals,
+git tools, the prompt and the WM. Five ramps: **void** (violet black, the
+default), **drowned** (teal), **abyssal** (blue), plus **lifted** and
+**void-lifted**, floors raised for LCD panels that wash the dark out.
 
-Forked from [eldritch-rose](https://github.com/srlightbody/eldritch-rose) at the
-point its palette diverged from that theme's muted rose-pine restraint into
-full-chroma cyberpunk; eldritch-rose stays as the muted sibling. The neovim
+Forked from [eldritch-rose](https://github.com/srlightbody/eldritch-rose) when
+the palette went full chroma and stopped being a muted rose pine variant.
+eldritch-rose is still around if you want the quiet version. The neovim
 highlight engine is adapted from [rosé-pine/neovim](https://github.com/rose-pine/neovim)
-(MIT, see `LICENSE`); the palette is original.
+(MIT, see `LICENSE`), the palette is mine.
 
 ## Who it's for
 
-Mostly me. I built it for my own eyes and my own work (a lot of terraform, a lot
-of terminal time), and every color is a deliberate call tuned to what I stare at
-all day. It's public because it's good and someone might want it, but I'm not
-running it as a project or chasing feature requests- if you want to add something,
-throw a PR up and I'll probably take it, or just fork it and do whatever, it's MIT.
+Mostly me. I built it for my own eyes and my own work, a lot of terraform and a
+lot of terminal time. It's public because it's good and someone might want it,
+but I'm not running it as a project or chasing feature requests- if you want to
+add something, throw a PR up and I'll probably take it, or fork it and do
+whatever, it's MIT.
 
 ## Palette
 
 ![Static Gospel palette](palette.svg)
 
-Accents are shared across every variant; only `base`/`surface`/`overlay`/grays
-change per ramp. Values below pair the accents with the **void** base.
+Accents are shared across every variant, only `base`/`surface`/`overlay`/grays
+change per ramp. The table pairs them with the **void** base.
 
 | Role                | Hex       | Note                |
 |---------------------|-----------|---------------------|
@@ -46,9 +45,9 @@ change per ramp. Values below pair the accents with the **void** base.
 | blight / cursor     | `#37f499` | the one alive thing |
 | selection (void)    | `#413d51` | violet tint         |
 
-Full-chroma field; separation is carried by hue, violet / magenta / teal / gold
-/ cyan across the deep void, with the green cursor and electric-cyan `aether`
-held a step hotter as the signals that must always read.
+Everything runs at full chroma, so hue does the separating: violet, magenta,
+teal, gold and cyan over the deep void. The green cursor and `aether` sit a step
+hotter than the rest so they always read.
 
 ### 16-color ANSI (void)
 
@@ -60,10 +59,10 @@ bright   8 #6e7487  9 #ff5c78 10 #69f8b3 11 #ffe08a 12 #b892ff 13 #ff86d4 14 #66
 ## Variants
 
 Accents are identical everywhere; only the background ramp changes. **void**
-is the default. **lifted** and **void-lifted** are utility variants: drowned's
-and void's ramps with the floor raised ~5 L* and the steps widened so the depth
-survives on low-contrast LCD/laptop panels instead of crushing to flat grey.
-Prefer them on non-OLED displays.
+is the default. **lifted** and **void-lifted** are drowned's and void's ramps
+with the floor raised ~5 L* and the steps widened, so the depth survives on LCD
+and laptop panels instead of crushing to flat grey. Use them on anything that
+isn't OLED.
 
 | Variant | base | feel |
 |---------|-----------|-----------------------|
@@ -78,7 +77,7 @@ Prefer them on non-OLED displays.
 ![abyssal](assets/preview-abyssal.png)
 ![void-lifted](assets/preview-void-lifted.png)
 
-(lifted isn't pictured; it reads as drowned with a raised floor.)
+(lifted isn't pictured, it's drowned with a raised floor.)
 
 **Neovim** picks the variant at runtime:
 
@@ -87,17 +86,16 @@ require("static-gospel").setup({ variant = "drowned" }) -- or abyssal, lifted, v
 vim.cmd.colorscheme("static-gospel")
 ```
 
-**Everything else** ships a file per variant next to the default (which is
-void), e.g. `ghostty/static-gospel-drowned`, `bat/static-gospel-abyssal.tmTheme`,
+**Everything else** ships one file per variant next to the default (void), e.g.
+`ghostty/static-gospel-drowned`, `bat/static-gospel-abyssal.tmTheme`,
 `noctalia/colorschemes/Static Gospel Abyssal`, `brave/static-gospel-abyssal/`.
-Point your app at the variant file instead of the default.
+Point your app at the variant file instead of the default one.
 
 ## Building
 
-All app files are generated from a single source, `palette.toml`, so a color
-change is made once and propagated everywhere. Don't hand-edit the per-app
-theme files; edit `palette.toml` (or `build/templates/*.tmpl` for structure)
-and regenerate:
+Every app file is generated from `palette.toml`, so a color gets changed once
+and lands everywhere. Don't hand edit the per-app theme files, edit
+`palette.toml` (or `build/templates/*.tmpl` for structure) and rebuild:
 
 ```bash
 python build/build.py            # regenerate every app file + palette.lua
@@ -105,21 +103,19 @@ python build/build.py check      # fail if any file is out of sync (CI/pre-commi
 python build/build.py templatize # rebuild templates from the void (default) files
 ```
 
-Only the ten per-variant roles (`base`/`surface`/`overlay`/`_nc`, the three
-highlight grays, plus `inactive_tab`/`border`/`selection`) and the display name
-differ between variants; accents, bright ANSI, and delta's diff tints are shared.
-Adding a variant is a new `[variants.*]` block in `palette.toml` followed by a
-build.
+Only ten roles change per variant (`base`/`surface`/`overlay`/`_nc`, the three
+highlight grays, `inactive_tab`/`border`/`selection`) plus the display name;
+accents, bright ANSI and delta's diff tints are shared. A new variant is a new
+`[variants.*]` block in `palette.toml` and a rebuild.
 
 ## Install
 
-Each app needs only its one file. The fastest path per app is below; no full
-clone required. Replace the raw URL base if you fork it.
+Each app needs one file and no clone (brave is the exception). Replace the raw
+URL base if you fork it.
 
 ### Neovim
 
-Nothing to download by hand, the plugin manager fetches it. It's self
-contained (no dependencies). With lazy.nvim:
+Your plugin manager fetches it and there are no dependencies. With lazy.nvim:
 
 ```lua
 {
@@ -186,9 +182,9 @@ Reload with `tmux source-file ~/.config/tmux/tmux.conf`.
 
 ### powerlevel10k
 
-Overrides the colors of your existing generated `~/.p10k.zsh`; collapses the
-rainbow segments onto one lit surface bar with hot accent text. Source it after
-p10k's config:
+Overrides the colors in your existing `~/.p10k.zsh` and collapses the rainbow
+segments onto one surface colored bar with hot accent text. Source it after
+p10k's own config:
 
 ```sh
 mkdir -p ~/.config/zsh
@@ -203,8 +199,8 @@ source ~/.config/zsh/static-gospel.zsh
 
 ### Brave / Chromium
 
-A theme extension; needs the whole folder for the variant you want, so clone
-the repo first:
+It's a theme extension, so it needs the whole folder for the variant you want.
+Clone the repo:
 
 ```sh
 git clone https://github.com/srlightbody/static-gospel ~/.static-gospel
@@ -284,8 +280,8 @@ curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/delt
 
 ### lazygit
 
-Keep the theme as a standalone file and layer it over your config (so updates
-never touch your personal settings):
+Keep it as its own file layered over your config, so updates never touch your
+own settings:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/lazygit/static-gospel.yml \
@@ -334,17 +330,16 @@ cp -r "noctalia/colorschemes/Static Gospel" ~/.config/noctalia/colorschemes/
 
 ## Notes
 
-- The neovim theme is standalone: it vendors and adapts rose-pine/neovim's
-  highlight engine (MIT, see LICENSE) and drives it from the palette above, so
-  there's no runtime dependency and it's free to drift from rose pine over time.
+- The neovim theme vendors rose-pine/neovim's highlight engine (MIT, see
+  LICENSE) and drives it off the palette above, so there's no runtime dependency
+  and it can drift from rose pine.
 - Syntax roles: keywords ride `rift` (violet ritual), functions `siren` (magenta
   wound), types/members/properties `verdigris` (toxic teal), strings/numbers
-  `witchfire` (gold), errors `ichor` (wound-red). `aether` (electric cyan) and
-  the green cursor/`blight` sit a step hotter as the signals that must always read.
-- ANSI: the blue slot (`color4` = `rift`) is now violet and sits close to the
-  magenta slot (`color5` = `umbra`); a deliberate synthwave tradeoff, nvim
-  accents and the 16-color ANSI are allowed to diverge.
+  `witchfire` (gold), errors `ichor` (wound-red).
+- ANSI: the blue slot (`color4` = `rift`) is violet and sits close to the
+  magenta slot (`color5` = `umbra`). Tradeoff I took on purpose for the
+  synthwave look, nvim accents and the 16-color ANSI don't have to match.
 - The accent keys (`ichor`/`witchfire`/`siren`/`rift`/`aether`/`umbra`/`blight`)
-  carry over from eldritch-rose, themselves eldritch renames of rose pine's
-  love/gold/rose/pine/foam/iris/leaf, kept as a lineage marker even though the
-  colors are now original.
+  carry over from eldritch-rose, which renamed rose pine's
+  love/gold/rose/pine/foam/iris/leaf. None of the colors are the same anymore, I
+  kept the names anyway.
