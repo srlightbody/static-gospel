@@ -1,52 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" font-family="JetBrains Mono, DejaVu Sans Mono, monospace">
 <rect width="900" height="620" fill="#130420"/>
-<text x="450.0" y="52" fill="#ebfafa" font-size="30" text-anchor="middle" letter-spacing="4" font-weight="bold">Static Gospel</text>
+<text x="450.0" y="52" fill="#f5f5ff" font-size="30" text-anchor="middle" letter-spacing="4" font-weight="bold">Static Gospel</text>
 <text x="450.0" y="82" fill="#97a0b6" font-size="16" text-anchor="middle">eldritch cyberpunk — full-chroma occult neon over deep voids (void base shown)</text>
 <text x="40" y="106" fill="#97a0b6" font-size="14" letter-spacing="2">RAMP + NEUTRALS (void)</text>
 <rect x="40" y="120" width="110" height="70" rx="5" fill="#130420" stroke="#2a2340" stroke-width="1"/>
-<text x="95.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">base</text>
+<text x="95.0" y="210" fill="#f5f5ff" font-size="13" text-anchor="middle">base</text>
 <text x="95.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#130420</text>
 <rect x="158" y="120" width="110" height="70" rx="5" fill="#17112b" stroke="#2a2340" stroke-width="1"/>
-<text x="213.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">surface</text>
+<text x="213.0" y="210" fill="#f5f5ff" font-size="13" text-anchor="middle">surface</text>
 <text x="213.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#17112b</text>
 <rect x="276" y="120" width="110" height="70" rx="5" fill="#241a38" stroke="#2a2340" stroke-width="1"/>
-<text x="331.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">overlay</text>
+<text x="331.0" y="210" fill="#f5f5ff" font-size="13" text-anchor="middle">overlay</text>
 <text x="331.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#241a38</text>
-<rect x="394" y="120" width="110" height="70" rx="5" fill="#413d51" stroke="#2a2340" stroke-width="1"/>
-<text x="449.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">selection</text>
-<text x="449.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#413d51</text>
+<rect x="394" y="120" width="110" height="70" rx="5" fill="#4b3f58" stroke="#2a2340" stroke-width="1"/>
+<text x="449.0" y="210" fill="#f5f5ff" font-size="13" text-anchor="middle">selection</text>
+<text x="449.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#4b3f58</text>
 <rect x="512" y="120" width="110" height="70" rx="5" fill="#6e7487" stroke="#2a2340" stroke-width="1"/>
-<text x="567.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">ash</text>
+<text x="567.0" y="210" fill="#f5f5ff" font-size="13" text-anchor="middle">ash</text>
 <text x="567.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#6e7487</text>
 <rect x="630" y="120" width="110" height="70" rx="5" fill="#97a0b6" stroke="#2a2340" stroke-width="1"/>
-<text x="685.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">shroud</text>
+<text x="685.0" y="210" fill="#f5f5ff" font-size="13" text-anchor="middle">shroud</text>
 <text x="685.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#97a0b6</text>
-<rect x="748" y="120" width="110" height="70" rx="5" fill="#ebfafa" stroke="#2a2340" stroke-width="1"/>
-<text x="803.0" y="210" fill="#ebfafa" font-size="13" text-anchor="middle">text</text>
-<text x="803.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#ebfafa</text>
+<rect x="748" y="120" width="110" height="70" rx="5" fill="#f5f5ff" stroke="#2a2340" stroke-width="1"/>
+<text x="803.0" y="210" fill="#f5f5ff" font-size="13" text-anchor="middle">text</text>
+<text x="803.0" y="228" fill="#97a0b6" font-size="12" text-anchor="middle">#f5f5ff</text>
 <text x="40" y="276" fill="#97a0b6" font-size="14" letter-spacing="2">ACCENTS (shared across variants)</text>
 <rect x="40" y="290" width="200" height="90" rx="6" fill="#ff3860"/>
-<text x="140.0" y="400" fill="#ebfafa" font-size="14" text-anchor="middle">ichor</text>
+<text x="140.0" y="400" fill="#f5f5ff" font-size="14" text-anchor="middle">ichor</text>
 <text x="140.0" y="418" fill="#97a0b6" font-size="12" text-anchor="middle">#ff3860 · errors</text>
 <rect x="255" y="290" width="200" height="90" rx="6" fill="#ffce54"/>
-<text x="355.0" y="400" fill="#ebfafa" font-size="14" text-anchor="middle">witchfire</text>
+<text x="355.0" y="400" fill="#f5f5ff" font-size="14" text-anchor="middle">witchfire</text>
 <text x="355.0" y="418" fill="#97a0b6" font-size="12" text-anchor="middle">#ffce54 · strings</text>
 <rect x="470" y="290" width="200" height="90" rx="6" fill="#fa4fbc"/>
-<text x="570.0" y="400" fill="#ebfafa" font-size="14" text-anchor="middle">siren</text>
+<text x="570.0" y="400" fill="#f5f5ff" font-size="14" text-anchor="middle">siren</text>
 <text x="570.0" y="418" fill="#97a0b6" font-size="12" text-anchor="middle">#fa4fbc · functions</text>
 <rect x="685" y="290" width="200" height="90" rx="6" fill="#9d6bff"/>
-<text x="785.0" y="400" fill="#ebfafa" font-size="14" text-anchor="middle">rift</text>
+<text x="785.0" y="400" fill="#f5f5ff" font-size="14" text-anchor="middle">rift</text>
 <text x="785.0" y="418" fill="#97a0b6" font-size="12" text-anchor="middle">#9d6bff · keywords</text>
 <rect x="40" y="420" width="200" height="90" rx="6" fill="#04d1f9"/>
-<text x="140.0" y="530" fill="#ebfafa" font-size="14" text-anchor="middle">aether</text>
+<text x="140.0" y="530" fill="#f5f5ff" font-size="14" text-anchor="middle">aether</text>
 <text x="140.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#04d1f9 · signal</text>
-<rect x="255" y="420" width="200" height="90" rx="6" fill="#22e0c0"/>
-<text x="355.0" y="530" fill="#ebfafa" font-size="14" text-anchor="middle">verdigris</text>
-<text x="355.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#22e0c0 · types</text>
-<rect x="470" y="420" width="200" height="90" rx="6" fill="#b48eff"/>
-<text x="570.0" y="530" fill="#ebfafa" font-size="14" text-anchor="middle">umbra</text>
-<text x="570.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#b48eff · directives</text>
+<rect x="255" y="420" width="200" height="90" rx="6" fill="#0dc6a6"/>
+<text x="355.0" y="530" fill="#f5f5ff" font-size="14" text-anchor="middle">verdigris</text>
+<text x="355.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#0dc6a6 · types</text>
+<rect x="470" y="420" width="200" height="90" rx="6" fill="#ff8506"/>
+<text x="570.0" y="530" fill="#f5f5ff" font-size="14" text-anchor="middle">ember</text>
+<text x="570.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#ff8506 · directives</text>
 <rect x="685" y="420" width="200" height="90" rx="6" fill="#37f499"/>
-<text x="785.0" y="530" fill="#ebfafa" font-size="14" text-anchor="middle">blight</text>
+<text x="785.0" y="530" fill="#f5f5ff" font-size="14" text-anchor="middle">blight</text>
 <text x="785.0" y="548" fill="#97a0b6" font-size="12" text-anchor="middle">#37f499 · cursor/alive</text>
 </svg>

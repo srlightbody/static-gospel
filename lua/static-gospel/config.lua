@@ -1,6 +1,6 @@
 ---@alias Variant "drowned" | "void" | "abyssal" | "lifted" | "void-lifted"
----@alias Palette { base: string, surface: string, overlay: string, _nc: string, border: string, highlight_low: string, highlight_med: string, highlight_high: string, ash: string, shroud: string, text: string, ichor: string, witchfire: string, siren: string, rift: string, aether: string, verdigris: string, umbra: string, blight: string }
----@alias PaletteColor "base" | "surface" | "overlay" | "border" | "ash" | "shroud" | "text" | "ichor" | "witchfire" | "siren" | "rift" | "aether" | "verdigris" | "umbra" | "blight" | "highlight_low" | "highlight_med" | "highlight_high"
+---@alias Palette { base: string, surface: string, overlay: string, _nc: string, border: string, highlight_low: string, highlight_med: string, highlight_high: string, ash: string, shroud: string, text: string, ichor: string, witchfire: string, siren: string, rift: string, aether: string, verdigris: string, ember: string, blight: string, selection: string }
+---@alias PaletteColor "base" | "surface" | "overlay" | "border" | "ash" | "shroud" | "text" | "ichor" | "witchfire" | "siren" | "rift" | "aether" | "verdigris" | "ember" | "blight" | "selection" | "highlight_low" | "highlight_med" | "highlight_high"
 ---@alias Highlight { link: string, inherit: boolean } | { fg: string, bg: string, sp: string, bold: boolean, italic: boolean, undercurl: boolean, underline: boolean, underdouble: boolean, underdotted: boolean, underdashed: boolean, strikethrough: boolean, inherit: boolean }
 
 local config = {}
@@ -42,30 +42,30 @@ config.options = {
 	---@type table<string, string | PaletteColor>
 	groups = {
 		border = "ash",
-		link = "umbra",
+		link = "ember",
 		panel = "surface",
 
 		error = "ichor",
-		hint = "umbra",
+		hint = "ember",
 		info = "aether",
 		ok = "blight",
 		warn = "witchfire",
 		note = "rift",
 		todo = "siren",
 
-		git_add = "aether",
+		git_add = "blight",
 		git_change = "siren",
 		git_delete = "ichor",
 		git_dirty = "siren",
 		git_ignore = "ash",
-		git_merge = "umbra",
+		git_merge = "ember",
 		git_rename = "rift",
-		git_stage = "umbra",
+		git_stage = "ember",
 		git_text = "siren",
 		git_untracked = "shroud",
 
 		---@type string | PaletteColor
-		h1 = "umbra",
+		h1 = "ember",
 		h2 = "aether",
 		h3 = "siren",
 		h4 = "witchfire",

@@ -9,10 +9,10 @@
 	syntax-theme = static-gospel-drowned
 	line-numbers = true
 
-	minus-style = syntax "#3a1f2a"
-	minus-emph-style = syntax "#5a2535"
-	plus-style = syntax "#16302a"
-	plus-emph-style = syntax "#1d4a3e"
+	minus-style = syntax "#4c222e"
+	minus-emph-style = syntax "#702638"
+	plus-style = syntax "#1a503d"
+	plus-emph-style = syntax "#20714f"
 
 	line-numbers-minus-style = "#ff3860"
 	line-numbers-plus-style = "#37f499"
@@ -22,7 +22,7 @@
 
 	file-style = "#04d1f9" bold
 	file-decoration-style = "#293338" ul
-	hunk-header-style = "#b48eff" bold
+	hunk-header-style = "#ff8506" bold
 	hunk-header-decoration-style = "#293338" box
 
 	zero-style = syntax

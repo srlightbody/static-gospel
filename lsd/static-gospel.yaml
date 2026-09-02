@@ -7,11 +7,11 @@ permission:
   read: "#37f499"
   write: "#ffce54"
   exec: "#ff3860"
-  exec-sticky: "#b48eff"
+  exec-sticky: "#ff8506"
   no-access: "#6e7487"
   octal: "#04d1f9"
   acl: "#04d1f9"
-  context: "#b48eff"
+  context: "#ff8506"
 date:
   hour-old: "#37f499"
   day-old: "#04d1f9"
@@ -22,14 +22,14 @@ size:
   medium: "#ffce54"
   large: "#ff3860"
 inode:
-  valid: "#b48eff"
+  valid: "#ff8506"
   invalid: "#6e7487"
 links:
-  valid: "#b48eff"
+  valid: "#ff8506"
   invalid: "#6e7487"
 tree-edge: "#26233a"
 git-status:
-  default: "#ebfafa"
+  default: "#f5f5ff"
   unmodified: "#6e7487"
   ignored: "#6e7487"
   new-in-index: "#37f499"

@@ -9,10 +9,10 @@
 	syntax-theme = static-gospel-abyssal
 	line-numbers = true
 
-	minus-style = syntax "#3a1f2a"
-	minus-emph-style = syntax "#5a2535"
-	plus-style = syntax "#16302a"
-	plus-emph-style = syntax "#1d4a3e"
+	minus-style = syntax "#471a30"
+	minus-emph-style = syntax "#6c203a"
+	plus-style = syntax "#15493e"
+	plus-emph-style = syntax "#1c6b50"
 
 	line-numbers-minus-style = "#ff3860"
 	line-numbers-plus-style = "#37f499"
@@ -22,7 +22,7 @@
 
 	file-style = "#04d1f9" bold
 	file-decoration-style = "#222a3a" ul
-	hunk-header-style = "#b48eff" bold
+	hunk-header-style = "#ff8506" bold
 	hunk-header-decoration-style = "#222a3a" box
 
 	zero-style = syntax

@@ -33,7 +33,7 @@ local function set_highlights()
 		["@method"] = { fg = palette.siren },
 		["@namespace"] = { link = "Include" },
 		["@number"] = { link = "Number" },
-		["@parameter"] = { fg = palette.umbra, italic = styles.italic },
+		["@parameter"] = { fg = palette.ember, italic = styles.italic },
 		["@preproc"] = { link = "PreProc" },
 		["@punctuation"] = { fg = palette.shroud },
 		["@punctuation.bracket"] = { link = "@punctuation" },
@@ -45,8 +45,8 @@ local function set_highlights()
 		["@symbol"] = { link = "Identifier" },
 		["@text"] = { fg = palette.text },
 		["@text.danger"] = { fg = groups.error },
-		["@text.diff.add"] = { fg = groups.git_add, bg = groups.git_add, blend = 20 },
-		["@text.diff.delete"] = { fg = groups.git_delete, bg = groups.git_delete, blend = 20 },
+		["@text.diff.add"] = { fg = groups.git_add, bg = groups.git_add, blend = 25 },
+		["@text.diff.delete"] = { fg = groups.git_delete, bg = groups.git_delete, blend = 25 },
 		["@text.emphasis"] = { italic = true },
 		["@text.environment"] = { link = "Macro" },
 		["@text.environment.name"] = { link = "Type" },
@@ -88,9 +88,9 @@ local function set_highlights()
 		CursorLineNr = { fg = palette.siren, bold = styles.bold },
 		-- DarkenedPanel = { },
 		-- DarkenedStatusline = {},
-		DiffAdd = { bg = groups.git_add, blend = 20 },
+		DiffAdd = { bg = groups.git_add, blend = 25 },
 		DiffChange = { bg = groups.git_change, blend = 20 },
-		DiffDelete = { bg = groups.git_delete, blend = 20 },
+		DiffDelete = { bg = groups.git_delete, blend = 25 },
 		DiffText = { bg = groups.git_text, blend = 40 },
 		diffAdded = { link = "DiffAdd" },
 		diffChanged = { link = "DiffChange" },
@@ -106,7 +106,7 @@ local function set_highlights()
 		LineNr = { fg = palette.ash },
 		MatchParen = { fg = palette.aether, bg = palette.aether, blend = 30 },
 		ModeMsg = { fg = palette.shroud },
-		MoreMsg = { fg = palette.umbra },
+		MoreMsg = { fg = palette.ember },
 		NonText = { fg = palette.ash },
 		Normal = { fg = palette.text, bg = palette.base },
 		NormalFloat = { bg = groups.panel },
@@ -143,7 +143,7 @@ local function set_highlights()
 		TabLineSel = { fg = palette.text, bg = palette.overlay, bold = styles.bold },
 		Title = { fg = palette.aether, bold = styles.bold },
 		VertSplit = { fg = groups.border },
-		Visual = { bg = palette.umbra, blend = 55 },
+		Visual = { bg = palette.selection },
 		-- VisualNOS = {},
 		WarningMsg = { fg = groups.warn, bold = styles.bold },
 		-- Whitespace = {},
@@ -189,7 +189,7 @@ local function set_highlights()
 		Conditional = { fg = palette.rift },
 		Constant = { fg = palette.witchfire },
 		Debug = { fg = palette.siren },
-		Define = { fg = palette.umbra },
+		Define = { fg = palette.ember },
 		Delimiter = { fg = palette.shroud },
 		Error = { fg = palette.ichor },
 		Exception = { fg = palette.rift },
@@ -205,15 +205,15 @@ local function set_highlights()
 		LspReferenceRead = { bg = palette.highlight_med },
 		LspReferenceText = { bg = palette.highlight_med },
 		LspReferenceWrite = { bg = palette.highlight_med },
-		Macro = { fg = palette.umbra },
+		Macro = { fg = palette.ember },
 		Number = { fg = palette.witchfire },
 		Operator = { fg = palette.shroud },
-		PreCondit = { fg = palette.umbra },
+		PreCondit = { fg = palette.ember },
 		PreProc = { link = "PreCondit" },
 		Repeat = { fg = palette.rift },
 		Special = { fg = palette.verdigris },
 		SpecialChar = { link = "Special" },
-		SpecialComment = { fg = palette.umbra },
+		SpecialComment = { fg = palette.ember },
 		Statement = { fg = palette.rift, bold = styles.bold },
 		StorageClass = { fg = palette.verdigris },
 		String = { fg = palette.witchfire },
@@ -222,7 +222,7 @@ local function set_highlights()
 		Todo = { fg = palette.siren, bg = palette.siren, blend = 20 },
 		Type = { fg = palette.verdigris },
 		TypeDef = { link = "Type" },
-		Underlined = { fg = palette.umbra, underline = true },
+		Underlined = { fg = palette.ember, underline = true },
 		Added = { fg = groups.git_add },
 		Changed = { fg = groups.git_change },
 		Removed = { fg = groups.git_delete },
@@ -231,7 +231,7 @@ local function set_highlights()
 		healthSuccess = { fg = groups.info },
 		healthWarning = { fg = groups.warn },
 
-		htmlArg = { fg = palette.umbra },
+		htmlArg = { fg = palette.ember },
 		htmlBold = { bold = styles.bold },
 		htmlEndTag = { fg = palette.shroud },
 		htmlH1 = { link = "markdownH1" },
@@ -278,8 +278,8 @@ local function set_highlights()
 		--- |:help treesitter-highlight-groups|
 		["@variable"] = { fg = palette.text, italic = styles.italic },
 		["@variable.builtin"] = { fg = palette.ichor, italic = styles.italic, bold = styles.bold },
-		["@variable.parameter"] = { fg = palette.umbra, italic = styles.italic },
-		["@variable.parameter.builtin"] = { fg = palette.umbra, italic = styles.italic, bold = styles.bold },
+		["@variable.parameter"] = { fg = palette.ember, italic = styles.italic },
+		["@variable.parameter.builtin"] = { fg = palette.ember, italic = styles.italic, bold = styles.bold },
 		["@variable.member"] = { fg = palette.verdigris },
 
 		["@constant"] = { fg = palette.witchfire },
@@ -292,7 +292,7 @@ local function set_highlights()
 
 		["@string"] = { link = "String" },
 		-- ["@string.documentation"] = {},
-		["@string.regexp"] = { fg = palette.umbra },
+		["@string.regexp"] = { fg = palette.ember },
 		["@string.escape"] = { fg = palette.rift },
 		["@string.special"] = { link = "String" },
 		["@string.special.symbol"] = { link = "Identifier" },
@@ -311,8 +311,8 @@ local function set_highlights()
 		["@type.builtin"] = { fg = palette.verdigris, bold = styles.bold },
 		-- ["@type.definition"] = {},
 
-		["@attribute"] = { fg = palette.umbra },
-		["@attribute.builtin"] = { fg = palette.umbra, bold = styles.bold },
+		["@attribute"] = { fg = palette.ember },
+		["@attribute.builtin"] = { fg = palette.ember, bold = styles.bold },
 		["@property"] = { fg = palette.verdigris, italic = styles.italic },
 
 		["@function"] = { fg = palette.siren },
@@ -321,7 +321,7 @@ local function set_highlights()
 		["@function.macro"] = { link = "Function" },
 
 		["@function.method"] = { fg = palette.siren },
-		["@function.method.call"] = { fg = palette.umbra },
+		["@function.method.call"] = { fg = palette.ember },
 
 		["@constructor"] = { fg = palette.verdigris },
 		["@operator"] = { link = "Operator" },
@@ -340,8 +340,8 @@ local function set_highlights()
 		["@keyword.conditional"] = { fg = palette.rift },
 		["@keyword.conditional.ternary"] = { fg = palette.rift },
 
-		["@keyword.directive"] = { fg = palette.umbra },
-		["@keyword.directive.define"] = { fg = palette.umbra },
+		["@keyword.directive"] = { fg = palette.ember },
+		["@keyword.directive.define"] = { fg = palette.ember },
 
 		--- Punctuation
 		["@punctuation.delimiter"] = { fg = palette.shroud },
@@ -399,12 +399,12 @@ local function set_highlights()
 		["@markup.heading.5.marker.markdown"] = { link = "markdownH5Delimiter" },
 		["@markup.heading.6.marker.markdown"] = { link = "markdownH6Delimiter" },
 
-		["@diff.plus"] = { fg = groups.git_add, bg = groups.git_add, blend = 20 },
-		["@diff.minus"] = { fg = groups.git_delete, bg = groups.git_delete, blend = 20 },
+		["@diff.plus"] = { fg = groups.git_add, bg = groups.git_add, blend = 25 },
+		["@diff.minus"] = { fg = groups.git_delete, bg = groups.git_delete, blend = 25 },
 		["@diff.delta"] = { bg = groups.git_change, blend = 20 },
 
 		["@tag"] = { link = "Tag" },
-		["@tag.attribute"] = { fg = palette.umbra },
+		["@tag.attribute"] = { fg = palette.ember },
 		["@tag.delimiter"] = { fg = palette.shroud },
 
 		--- Non-highlighting captures
@@ -468,7 +468,7 @@ local function set_highlights()
 		ModesFormat = { bg = palette.siren },
 		ModesInsert = { bg = palette.aether },
 		ModesReplace = { bg = palette.rift },
-		ModesVisual = { bg = palette.umbra },
+		ModesVisual = { bg = palette.rift },
 
 		-- kyazdani42/nvim-tree.lua
 		NvimTreeEmptyFolderName = { fg = palette.ash },
@@ -496,7 +496,7 @@ local function set_highlights()
 		NvimTreeWindowPicker = { link = "StatusLineTerm" },
 
 		-- nvim-neotest/neotest
-		NeotestAdapterName = { fg = palette.umbra },
+		NeotestAdapterName = { fg = palette.ember },
 		NeotestBorder = { fg = palette.highlight_med },
 		NeotestDir = { fg = palette.aether },
 		NeotestExpandMarker = { fg = palette.highlight_med },
@@ -513,7 +513,7 @@ local function set_highlights()
 		NeotestTarget = { fg = palette.ichor },
 		NeotestTest = { fg = palette.witchfire },
 		NeotestUnknown = { fg = palette.shroud },
-		NeotestWatching = { fg = palette.umbra },
+		NeotestWatching = { fg = palette.ember },
 
 		-- nvim-neo-tree/neo-tree.nvim
 		NeoTreeGitAdded = { fg = groups.git_add },
@@ -533,7 +533,7 @@ local function set_highlights()
 		FlashLabel = { fg = palette.base, bg = palette.ichor },
 
 		-- folke/which-key.nvim
-		WhichKey = { fg = palette.umbra },
+		WhichKey = { fg = palette.ember },
 		WhichKeyBorder = make_border(),
 		WhichKeyDesc = { fg = palette.witchfire },
 		WhichKeyFloat = { bg = groups.panel },
@@ -545,7 +545,7 @@ local function set_highlights()
 		WhichKeyIconGreen = { fg = palette.blight },
 		WhichKeyIconGrey = { fg = palette.shroud },
 		WhichKeyIconOrange = { fg = palette.siren },
-		WhichKeyIconPurple = { fg = palette.umbra },
+		WhichKeyIconPurple = { fg = palette.rift },
 		WhichKeyIconRed = { fg = palette.ichor },
 		WhichKeyIconYellow = { fg = palette.witchfire },
 		WhichKeyNormal = { link = "NormalFloat" },
@@ -598,7 +598,7 @@ local function set_highlights()
 		VimwikiHeader6 = { link = "markdownH6" },
 		VimwikiHeaderChar = { fg = palette.shroud },
 		VimwikiLink = { link = "markdownUrl" },
-		VimwikiList = { fg = palette.umbra },
+		VimwikiList = { fg = palette.ember },
 		VimwikiNoExistsLink = { fg = palette.ichor },
 
 		-- nvim-neorg/neorg
@@ -642,7 +642,7 @@ local function set_highlights()
 		ReferencesCount = { fg = palette.siren },
 		ReferencesIcon = { fg = palette.siren },
 		SagaShadow = { bg = palette.overlay },
-		TargetWord = { fg = palette.umbra },
+		TargetWord = { fg = palette.ember },
 
 		-- ray-x/lsp_signature.nvim
 		LspSignatureActiveParameter = { bg = palette.overlay },
@@ -701,9 +701,9 @@ local function set_highlights()
 		NotifyINFOIcon = { link = "NotifyINFOTitle" },
 		NotifyINFOTitle = { fg = groups.info },
 		NotifyTRACEBody = { link = "NormalFloat" },
-		NotifyTRACEBorder = make_border(palette.umbra),
+		NotifyTRACEBorder = make_border(palette.ember),
 		NotifyTRACEIcon = { link = "NotifyTRACETitle" },
-		NotifyTRACETitle = { fg = palette.umbra },
+		NotifyTRACETitle = { fg = palette.ember },
 		NotifyWARNBody = { link = "NormalFloat" },
 		NotifyWARNBorder = make_border(groups.warn),
 		NotifyWARNIcon = { link = "NotifyWARNTitle" },
@@ -721,19 +721,19 @@ local function set_highlights()
 		DapUILineNumber = { link = "DapUIBreakpointsPath" },
 		DapUIModifiedValue = { fg = palette.aether, bold = styles.bold },
 		DapUIScope = { link = "DapUIBreakpointsPath" },
-		DapUISource = { fg = palette.umbra },
+		DapUISource = { fg = palette.ember },
 		DapUIStoppedThread = { link = "DapUIBreakpointsPath" },
 		DapUIThread = { fg = palette.witchfire },
 		DapUIValue = { fg = palette.text },
 		DapUIVariable = { fg = palette.text },
-		DapUIType = { fg = palette.umbra },
+		DapUIType = { fg = palette.ember },
 		DapUIWatchesEmpty = { fg = palette.ichor },
 		DapUIWatchesError = { link = "DapUIWatchesEmpty" },
 		DapUIWatchesValue = { link = "DapUIThread" },
 
 		-- glepnir/dashboard-nvim
 		DashboardCenter = { fg = palette.witchfire },
-		DashboardFooter = { fg = palette.umbra },
+		DashboardFooter = { fg = palette.ember },
 		DashboardHeader = { fg = palette.rift },
 		DashboardShortcut = { fg = palette.ichor },
 
@@ -750,9 +750,9 @@ local function set_highlights()
 		NavicIconsFile = { fg = palette.ash },
 		NavicIconsFunction = { fg = palette.rift },
 		NavicIconsInterface = { fg = palette.aether },
-		NavicIconsKey = { fg = palette.umbra },
+		NavicIconsKey = { fg = palette.ember },
 		NavicIconsKeyword = { fg = palette.rift },
-		NavicIconsMethod = { fg = palette.umbra },
+		NavicIconsMethod = { fg = palette.ember },
 		NavicIconsModule = { fg = palette.siren },
 		NavicIconsNamespace = { fg = palette.ash },
 		NavicIconsNull = { fg = palette.ichor },
@@ -773,7 +773,7 @@ local function set_highlights()
 
 		-- folke/trouble.nvim
 		TroubleText = { fg = palette.shroud },
-		TroubleCount = { fg = palette.umbra, bg = palette.surface },
+		TroubleCount = { fg = palette.ember, bg = palette.surface },
 		TroubleNormal = { fg = palette.text, bg = groups.panel },
 
 		-- echasnovski/mini.nvim
@@ -832,7 +832,7 @@ local function set_highlights()
 		MiniIconsGreen = { fg = palette.blight },
 		MiniIconsGrey = { fg = palette.shroud },
 		MiniIconsOrange = { fg = palette.siren },
-		MiniIconsPurple = { fg = palette.umbra },
+		MiniIconsPurple = { fg = palette.rift },
 		MiniIconsRed = { fg = palette.ichor },
 		MiniIconsYellow = { fg = palette.witchfire },
 
@@ -890,7 +890,7 @@ local function set_highlights()
 		MiniStatuslineModeNormal = { fg = palette.base, bg = palette.siren, bold = styles.bold },
 		MiniStatuslineModeOther = { fg = palette.base, bg = palette.siren, bold = styles.bold },
 		MiniStatuslineModeReplace = { fg = palette.base, bg = palette.rift, bold = styles.bold },
-		MiniStatuslineModeVisual = { fg = palette.base, bg = palette.umbra, bold = styles.bold },
+		MiniStatuslineModeVisual = { fg = palette.base, bg = palette.rift, bold = styles.bold },
 
 		MiniSurround = { link = "IncSearch" },
 
@@ -933,7 +933,7 @@ local function set_highlights()
 		RainbowDelimiterGreen = { fg = palette.blight },
 		RainbowDelimiterOrange = { fg = palette.siren },
 		RainbowDelimiterRed = { fg = palette.ichor },
-		RainbowDelimiterViolet = { fg = palette.umbra },
+		RainbowDelimiterViolet = { fg = palette.rift },
 		RainbowDelimiterYellow = { fg = palette.witchfire },
 
 		-- MeanderingProgrammer/render-markdown.nvim
@@ -968,19 +968,19 @@ local function set_highlights()
 		GrugFarResultsRemoveIndicator = { fg = groups.git_delete },
 		GrugFarResultsAddIndicator = { fg = groups.git_add },
 		GrugFarResultsHeader = { fg = palette.rift },
-		GrugFarResultsLineNo = { fg = palette.umbra },
+		GrugFarResultsLineNo = { fg = palette.ember },
 		GrugFarResultsLineColumn = { link = "GrugFarResultsLineNo" },
 		GrugFarResultsMatch = { link = "CurSearch" },
 		GrugFarResultsPath = { fg = palette.aether },
-		GrugFarResultsStats = { fg = palette.umbra },
+		GrugFarResultsStats = { fg = palette.ember },
 
 		-- yetone/avante.nvim
 		AvanteTitle = { fg = palette.highlight_high, bg = palette.siren },
 		AvanteReversedTitle = { fg = palette.siren },
 		AvanteSubtitle = { fg = palette.highlight_med, bg = palette.aether },
 		AvanteReversedSubtitle = { fg = palette.aether },
-		AvanteThirdTitle = { fg = palette.highlight_med, bg = palette.umbra },
-		AvanteReversedThirdTitle = { fg = palette.umbra },
+		AvanteThirdTitle = { fg = palette.highlight_med, bg = palette.ember },
+		AvanteReversedThirdTitle = { fg = palette.ember },
 		AvantePromptInput = { fg = palette.text, bg = groups.panel },
 		AvantePromptInputBorder = { fg = groups.border },
 
@@ -1007,7 +1007,7 @@ local function set_highlights()
 		BlinkCmpKindProperty = { fg = palette.aether },
 		BlinkCmpKindUnit = { fg = palette.rift },
 		BlinkCmpKindValue = { fg = palette.ichor },
-		BlinkCmpKindKeyword = { fg = palette.umbra },
+		BlinkCmpKindKeyword = { fg = palette.ember },
 		BlinkCmpKindSnippet = { fg = palette.siren },
 		BlinkCmpKindColor = { fg = palette.ichor },
 		BlinkCmpKindFile = { fg = palette.aether },
@@ -1019,7 +1019,7 @@ local function set_highlights()
 		BlinkCmpKindStruct = { fg = palette.aether },
 		BlinkCmpKindEvent = { fg = palette.aether },
 		BlinkCmpKindOperator = { fg = palette.aether },
-		BlinkCmpKindTypeParameter = { fg = palette.umbra },
+		BlinkCmpKindTypeParameter = { fg = palette.ember },
 		BlinkCmpKindCodeium = { fg = palette.aether },
 		BlinkCmpKindCopilot = { fg = palette.aether },
 		BlinkCmpKindSupermaven = { fg = palette.aether },
@@ -1199,7 +1199,7 @@ local function set_highlights()
 		vim.g.terminal_color_11 = palette.b_yellow -- bright yellow
 		vim.g.terminal_color_4 = palette.rift -- blue
 		vim.g.terminal_color_12 = palette.b_blue -- bright blue
-		vim.g.terminal_color_5 = palette.umbra -- magenta
+		vim.g.terminal_color_5 = palette.siren -- magenta
 		vim.g.terminal_color_13 = palette.b_magenta -- bright magenta
 		vim.g.terminal_color_6 = palette.aether -- cyan
 		vim.g.terminal_color_14 = palette.b_cyan -- bright cyan

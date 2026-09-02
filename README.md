@@ -19,16 +19,16 @@ change. Table below is the **void** base.
 | overlay             | `#241a38` | void                |
 | ash                 | `#6e7487` | steel neutral       |
 | shroud              | `#97a0b6` | steel neutral       |
-| text (fg)           | `#ebfafa` |                     |
+| text (fg)           | `#f5f5ff` |                     |
 | ichor (errors)      | `#ff3860` | wound-red           |
 | witchfire (strings) | `#ffce54` | forbidden gold      |
 | siren (functions)   | `#fa4fbc` | magenta wound       |
 | rift (keywords)     | `#9d6bff` | violet ritual       |
 | aether (signal)     | `#04d1f9` | electric cyan       |
-| verdigris (types)  | `#22e0c0` | toxic teal          |
-| umbra (directives)  | `#b48eff` | violet              |
+| verdigris (types)   | `#0dc6a6` | toxic teal          |
+| ember (directives)  | `#ff8506` | signal orange       |
 | blight / cursor     | `#37f499` | the one alive thing |
-| selection (void)    | `#413d51` | violet tint         |
+| selection (void)    | `#4b3f58` | violet tint         |
 
 Nothing is toned down, so the colors are told apart by hue instead of
 brightness. The green cursor and `aether` sit a step hotter so they always
@@ -37,8 +37,8 @@ read.
 ### 16-color ANSI (void)
 
 ```
-normal   0 #26233a  1 #ff3860  2 #37f499  3 #ffce54  4 #9d6bff  5 #b48eff  6 #04d1f9  7 #e0def4
-bright   8 #6e7487  9 #ff5c78 10 #69f8b3 11 #ffe08a 12 #b892ff 13 #ff86d4 14 #66e4fd 15 #ebfafa
+normal   0 #26233a  1 #ff3860  2 #37f499  3 #ffce54  4 #9d6bff  5 #fa4fbc  6 #04d1f9  7 #dbdcf2
+bright   8 #6e7487  9 #ff5c78 10 #69f8b3 11 #ffe08a 12 #b892ff 13 #ff86d4 14 #66e4fd 15 #f5f5ff
 ```
 
 ## Variants
@@ -84,6 +84,7 @@ Every app file is generated from `palette.toml`. Don't hand edit them, edit
 python build/build.py            # regenerate every app file + palette.lua
 python build/build.py check      # fail if any file is out of sync (CI/pre-commit)
 python build/build.py templatize # rebuild templates from the void (default) files
+python build/preview.py          # regenerate assets/preview-*.png (needs Pillow)
 ```
 
 Only ten roles change per variant (`base`/`surface`/`overlay`/`_nc`, the three
@@ -314,11 +315,12 @@ cp -r "noctalia/colorschemes/Static Gospel" ~/.config/noctalia/colorschemes/
   can drift from rose pine.
 - Syntax roles: keywords ride `rift` (violet ritual), functions `siren` (magenta
   wound), types/members/properties `verdigris` (toxic teal), strings/numbers
-  `witchfire` (gold), errors `ichor` (wound-red).
-- ANSI: the blue slot (`color4` = `rift`) is violet and sits close to the
-  magenta slot (`color5` = `umbra`). That's for the synthwave look, nvim accents
-  and the 16-color ANSI don't have to match.
-- The accent keys (`ichor`/`witchfire`/`siren`/`rift`/`aether`/`umbra`/`blight`)
+  `witchfire` (gold), errors `ichor` (wound-red), parameters/directives/links
+  `ember` (signal orange).
+- ANSI: 4/12 are the violet pair (`rift`, bright blue), 5/13 the pink pair
+  (`siren`, bright magenta). `ember` and `verdigris` have no ANSI slot; nvim
+  accents and the 16-color ANSI don't have to match.
+- The accent keys (`ichor`/`witchfire`/`siren`/`rift`/`aether`/`blight`)
   carry over from eldritch-rose, which renamed rose pine's
-  love/gold/rose/pine/foam/iris/leaf. None of the colors are the same anymore,
-  the names stuck.
+  love/gold/rose/pine/foam/leaf. None of the colors are the same anymore, the
+  names stuck. `umbra` (iris) was retired when the second violet became `ember`.

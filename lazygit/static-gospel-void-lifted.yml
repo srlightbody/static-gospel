@@ -28,6 +28,6 @@ gui:
     unstagedChangesColor:
       - "#ff3860"
     defaultFgColor:
-      - "#ebfafa"
+      - "#f5f5ff"
   authorColors:
-    "*": "#b48eff"
+    "*": "#ff8506"

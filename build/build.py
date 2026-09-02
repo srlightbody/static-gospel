@@ -42,20 +42,38 @@ def load_palette():
 
 
 def shared_colors(pal):
-    """Flat name->hex for colors identical across variants (accents/bright/delta)."""
+    """Flat name->hex for colors identical across variants (accents/bright)."""
     out = {}
     for k, v in pal["accents"].items():
         out[k] = v
     for k, v in pal["bright"].items():
         out[f"b_{k}"] = v
-    for k, v in pal["delta"].items():
-        out[f"d_{k}"] = v
     return out
 
 
-def default_variant(pal):
+DELTA_LINE, DELTA_EMPH = 0.25, 0.40
+
+
+def blend_hex(fg, bg, t):
+    f, g = hex_to_rgb(fg), hex_to_rgb(bg)
+    return "#" + "".join(f"{round(a * t + b * (1 - t)):02x}" for a, b in zip(f, g))
+
+
+def variant_colors(pal, variant):
+    """Per-variant roles plus the delta diff tints derived from this base."""
+    v = pal["variants"][variant]
+    a = pal["accents"]
+    out = {r: v[r] for r in ROLES}
+    out["d_plus"] = blend_hex(a["blight"], v["base"], DELTA_LINE)
+    out["d_plus_emph"] = blend_hex(a["blight"], v["base"], DELTA_EMPH)
+    out["d_minus"] = blend_hex(a["ichor"], v["base"], DELTA_LINE)
+    out["d_minus_emph"] = blend_hex(a["ichor"], v["base"], DELTA_EMPH)
+    return out
+
+
+def default_variant_name(pal):
     """The variant with an empty suffix owns the un-suffixed files."""
-    return next(v for v in pal["variants"].values() if not v["suffix"])
+    return next(k for k, v in pal["variants"].items() if not v["suffix"])
 
 
 def slugify(suffix):
@@ -147,8 +165,8 @@ def render(template_text, variant, pal):
     # placeholders carry bare hex digits; any leading '#' stays literal in the
     # template, so apps that write '#rrggbb' and apps that write bare 'rrggbb'
     # (foot) both round-trip.
-    for role in ROLES:
-        out = out.replace(f"@@{role}@@", v[role].lstrip("#"))
+    for role, hx in variant_colors(pal, variant).items():
+        out = out.replace(f"@@{role}@@", hx.lstrip("#"))
     for name, hx in shared_colors(pal).items():
         out = out.replace(f"@@{name}@@", hx.lstrip("#"))
     suffix = f" {v['suffix']}" if v["suffix"] else ""
@@ -171,7 +189,7 @@ def build_lua(pal):
     for k in ("ash", "shroud", "text"):
         add(f'\t{k} = "{a[k]}",')
     add("")
-    for k in ("ichor", "witchfire", "siren", "rift", "aether", "verdigris", "umbra", "blight"):
+    for k in ("ichor", "witchfire", "siren", "rift", "aether", "verdigris", "ember", "blight"):
         add(f'\t{k} = "{a[k]}",')
     add("")
     add("\t-- bright ANSI, used only by the embedded terminal")
@@ -193,7 +211,7 @@ def build_lua(pal):
             f'overlay = "{v["overlay"]}", _nc = "{v["_nc"]}",')
         add(f'\t\thighlight_low = "{v["hl_low"]}", highlight_med = "{v["hl_med"]}", '
             f'highlight_high = "{v["hl_high"]}",')
-        add(f'\t\tborder = "{v["border"]}",')
+        add(f'\t\tborder = "{v["border"]}", selection = "{v["selection"]}",')
         add("\t},")
     add("}")
     add("")
@@ -253,12 +271,11 @@ def cmd_check(pal):
 
 def cmd_templatize(pal):
     """Rebuild templates from the current default-variant files (dev-only)."""
-    d = default_variant(pal)
     # roles first, then shared; on a hex collision (cursor==blight) the first
     # wins, keeping a single deterministic placeholder per hex.
     hex_to_ph = {}
-    for r in ROLES:
-        hex_to_ph.setdefault(d[r].lstrip("#").lower(), f"@@{r}@@")
+    for r, hx in variant_colors(pal, default_variant_name(pal)).items():
+        hex_to_ph.setdefault(hx.lstrip("#").lower(), f"@@{r}@@")
     for name, hx in shared_colors(pal).items():
         hex_to_ph.setdefault(hx.lstrip("#").lower(), f"@@{name}@@")
     TPL.mkdir(parents=True, exist_ok=True)

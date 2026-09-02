@@ -10,33 +10,33 @@ order = ["void", "drowned", "abyssal", "lifted", "void-lifted"]
 # cold machine over the void black-violet, not cozy.
 ash       = "#6e7487"
 shroud    = "#97a0b6"
-text      = "#ebfafa"
+text      = "#f5f5ff"
 
 # static gospel: a cthulhu cult running on futuristic tech,
 # the neon is the delivery, the horror is the payload. Full-chroma field- punch
 # comes from hue contrast on the void ramp, not from saturating a muted field.
 # rift = violet ritual (keywords), siren = magenta wound (functions), verdigris
 # = toxic-teal wrongness (types/props/members), witchfire = forbidden gold
-# (strings/numbers/constants), ichor = wound-red (errors). aether stays an
-# electric-cyan signal, a step hotter than the field; blight/cursor keep the
-# green- the one thing genuinely alive.
+# (strings/numbers/constants), ichor = wound-red (errors), ember = signal
+# orange (parameters/directives/attributes/links, the synthwave partner to the
+# violet). aether stays an electric-cyan signal, a step hotter than the field;
+# blight/cursor keep the green- the one thing genuinely alive.
 ichor      = "#ff3860"
 witchfire  = "#ffce54"
 siren      = "#fa4fbc"
 rift       = "#9d6bff"
 aether     = "#04d1f9"
-verdigris = "#22e0c0"
-umbra      = "#b48eff"
+verdigris  = "#0dc6a6"
+ember      = "#ff8506"
 blight     = "#37f499"
 cursor     = "#37f499"
 
 # bright ANSI (8..15); 8 = ash, 15 = text, plus normal-7 white.
 # brights ride a step up from the field accents; green/cyan stay the glow family.
-# NOTE: color4 (blue) = rift is now violet and color5 (magenta) = umbra is a
-# near violet, so the terminal blue/magenta slots sit close- known tradeoff of
-# the pivot (nvim/ANSI are allowed to diverge; decouple if vibro-cult graduates).
+# ANSI pairs: 4/12 = rift/blue (violet), 5/13 = siren/magenta (pink). ember and
+# verdigris have no ANSI slot; nvim accents and ANSI are allowed to diverge.
 [bright]
-white7  = "#e0def4"
+white7  = "#dbdcf2"
 red     = "#ff5c78"
 green   = "#69f8b3"
 yellow  = "#ffe08a"
@@ -44,12 +44,8 @@ blue    = "#b892ff"
 magenta = "#ff86d4"
 cyan    = "#66e4fd"
 
-# delta diff backgrounds — fixed across variants
-[delta]
-minus      = "#3a1f2a"
-minus_emph = "#5a2535"
-plus       = "#16302a"
-plus_emph  = "#1d4a3e"
+# delta diff backgrounds are computed per variant in build.py: ichor/blight
+# blended onto that variant's base at 25% (line) and 40% (emph).
 
 [variants.drowned]
 suffix       = "Drowned"
@@ -63,7 +59,7 @@ hl_med       = "#3e4750"
 hl_high      = "#505a64"
 inactive_tab = "#172329"
 border       = "#293338"
-selection    = "#464357"
+selection    = "#314954"
 
 [variants.void]
 suffix       = ""
@@ -77,7 +73,7 @@ hl_med       = "#403d52"
 hl_high      = "#524f67"
 inactive_tab = "#1f1d2e"
 border       = "#26233a"
-selection    = "#413d51"
+selection    = "#4b3f58"
 
 [variants.abyssal]
 suffix       = "Abyssal"
@@ -91,7 +87,7 @@ hl_med       = "#3a4358"
 hl_high      = "#4c576e"
 inactive_tab = "#11192c"
 border       = "#222a3a"
-selection    = "#444055"
+selection    = "#3d4558"
 
 [variants.lifted]
 suffix       = "Lifted"
@@ -108,7 +104,7 @@ hl_med       = "#3e4750"
 hl_high      = "#505a65"
 inactive_tab = "#11272f"
 border       = "#26363d"
-selection    = "#464357"
+selection    = "#2f4a51"
 
 [variants."void-lifted"]
 suffix       = "Void Lifted"
@@ -118,7 +114,7 @@ comment      = [
   "washed on the laptop panel, and the deeper base widens the base->surface step.",
 ]
 base         = "#190a24"
-surface      = "#292440"
+surface      = "#261d38"
 overlay      = "#382e4e"
 _nc          = "#12071c"
 hl_low       = "#2b2a38"
@@ -126,4 +122,4 @@ hl_med       = "#464358"
 hl_high      = "#58556e"
 inactive_tab = "#211f30"
 border       = "#333048"
-selection    = "#474358"
+selection    = "#4c3f58"

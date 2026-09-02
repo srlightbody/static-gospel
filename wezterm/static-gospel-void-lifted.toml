@@ -6,12 +6,12 @@ name = "Static Gospel Void Lifted"
 author = "Sam Lightbody"
 
 [colors]
-foreground = "#ebfafa"
+foreground = "#f5f5ff"
 background = "#190a24"
 cursor_bg = "#37f499"
 cursor_fg = "#190a24"
 cursor_border = "#37f499"
-selection_fg = "#e0def4"
-selection_bg = "#474358"
-ansi = ["#333048", "#ff3860", "#37f499", "#ffce54", "#9d6bff", "#b48eff", "#04d1f9", "#e0def4"]
-brights = ["#6e7487", "#ff5c78", "#69f8b3", "#ffe08a", "#b892ff", "#ff86d4", "#66e4fd", "#ebfafa"]
+selection_fg = "#dbdcf2"
+selection_bg = "#4c3f58"
+ansi = ["#333048", "#ff3860", "#37f499", "#ffce54", "#9d6bff", "#fa4fbc", "#04d1f9", "#dbdcf2"]
+brights = ["#6e7487", "#ff5c78", "#69f8b3", "#ffe08a", "#b892ff", "#ff86d4", "#66e4fd", "#f5f5ff"]
