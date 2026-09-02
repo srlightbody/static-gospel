@@ -1,6 +1,6 @@
 # Static Gospel@@name_suffix@@ - powerlevel10k
-# Source this AFTER ~/.p10k.zsh (it overrides the generated config's colors):
-#   [[ -f ~/.config/zsh/@@slug@@.zsh ]] && source ~/.config/zsh/@@slug@@.zsh
+# Source this near the end of ~/.p10k.zsh, immediately before its single
+# `p10k reload`, so the overrides are compiled without restarting prompt workers.
 #
 # Collapses p10k's rainbow to one lit signal bar: every segment sits on the
 # same block (this variant's `hl_med`, a step up from the muted overlay so the
@@ -50,6 +50,3 @@ typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND='#@@b_red@@'
 typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND='#@@blight@@'
 typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#@@blight@@'
 typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#@@b_red@@'
-
-# Re-apply if p10k is already loaded (no-op on a fresh shell).
-(( ! $+functions[p10k] )) || p10k reload
