@@ -81,7 +81,7 @@ local function set_highlights()
 		ColorColumn = { bg = palette.surface },
 		Conceal = { bg = "NONE" },
 		CurSearch = { fg = palette.base, bg = palette.witchfire },
-		Cursor = { fg = palette.base, bg = palette.blight },
+		Cursor = { fg = palette.base, bg = palette.cursor },
 		CursorColumn = { bg = palette.overlay },
 		-- CursorIM = {},
 		CursorLine = { bg = palette.overlay },

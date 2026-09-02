@@ -22,7 +22,7 @@
 
 	file-style = "#04d1f9" bold
 	file-decoration-style = "#26233a" ul
-	hunk-header-style = "#ff8506" bold
+	hunk-header-style = "#e87500" bold
 	hunk-header-decoration-style = "#26233a" box
 
 	zero-style = syntax

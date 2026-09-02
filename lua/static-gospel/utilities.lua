@@ -18,19 +18,25 @@ local color_cache = {}
 
 ---@param color string Palette key or hex value
 function utilities.parse_color(color)
-	if color_cache[color] then
-		return color_cache[color]
-	end
-
 	if color == nil then
-		print("Invalid color: " .. color)
+		vim.notify("Static Gospel: invalid nil color", vim.log.levels.ERROR)
 		return nil
 	end
 
 	color = color:lower()
+	local palette = require("static-gospel.palette")()
+	local palette_color = palette[color]
+	-- Palette roles can change when the variant changes, so only cache literal
+	-- colors and stable named colors resolved by Neovim.
+	if palette_color then
+		return palette_color
+	end
+	if color_cache[color] then
+		return color_cache[color]
+	end
 
 	if not color:find("#") and color ~= "NONE" then
-		color = require("static-gospel.palette")()[color] or vim.api.nvim_get_color_by_name(color)
+		color = vim.api.nvim_get_color_by_name(color)
 	end
 
 	color_cache[color] = color

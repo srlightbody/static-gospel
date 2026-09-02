@@ -3,19 +3,21 @@
 
   python build/build.py            # write all app files + palette.lua
   python build/build.py check      # verify working tree matches (CI/pre-commit)
-  python build/build.py templatize # regenerate templates from the default (void) files
 
 Only the 10 per-variant roles (base/surface/overlay/_nc/hl_low/hl_med/hl_high +
 inactive_tab/border/selection) and the display name vary between variants; everything else
-is shared. Templates carry @@role@@ placeholders so a round-trip is byte-exact.
+is shared. Templates carry explicit @@role@@ placeholders and are edited directly.
 """
-import sys, tomllib, difflib
+import sys, tomllib, difflib, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TPL = Path(__file__).resolve().parent / "templates"
 ROLES = ["base", "surface", "overlay", "_nc", "hl_low", "hl_med", "hl_high",
          "inactive_tab", "border", "selection"]
+HEX = re.compile(r"^#[0-9a-fA-F]{6}$")
+PLACEHOLDER = re.compile(r"@@([A-Za-z0-9_-]+)@@")
+MANIFEST = Path(__file__).resolve().parent / "generated-files.txt"
 
 # app -> (theme dir, file extension). The default (void, empty suffix) file has no suffix.
 APPS = {
@@ -38,7 +40,57 @@ APPS = {
 
 
 def load_palette():
-    return tomllib.loads((ROOT / "palette.toml").read_text())
+    pal = tomllib.loads((ROOT / "palette.toml").read_text())
+    validate_palette(pal)
+    return pal
+
+
+def validate_palette(pal):
+    """Fail early when the token model is ambiguous or incomplete."""
+    variants = pal.get("variants", {})
+    order = pal.get("order", [])
+    errors = []
+    if len(order) != len(set(order)) or set(order) != set(variants):
+        errors.append("order must contain every variant exactly once")
+    defaults = [name for name, value in variants.items() if not value.get("suffix")]
+    if len(defaults) != 1:
+        errors.append("exactly one variant must have an empty suffix")
+    slugs = set()
+    for name, value in variants.items():
+        missing = [role for role in ROLES if role not in value]
+        if missing:
+            errors.append(f"variant {name!r} is missing: {', '.join(missing)}")
+        if not isinstance(value.get("comment"), list) or not value["comment"]:
+            errors.append(f"variant {name!r} must have a non-empty comment list")
+        slug = slugify(value.get("suffix", name))
+        if slug in slugs:
+            errors.append(f"variant {name!r} has duplicate output slug {slug!r}")
+        slugs.add(slug)
+    for section in ("accents", "bright"):
+        for name, value in pal.get(section, {}).items():
+            if not isinstance(value, str) or not HEX.fullmatch(value):
+                errors.append(f"{section}.{name} must be a six-digit hex color")
+    for name, value in variants.items():
+        for role in ROLES:
+            if role in value and (not isinstance(value[role], str) or not HEX.fullmatch(value[role])):
+                errors.append(f"variants.{name}.{role} must be a six-digit hex color")
+    if errors:
+        raise SystemExit("invalid palette.toml:\n  - " + "\n  - ".join(errors))
+
+
+def validate_templates(pal):
+    allowed = set(ROLES) | set(shared_colors(pal)) | {
+        "d_plus", "d_plus_emph", "d_minus", "d_minus_emph",
+        "name_suffix", "slug",
+    }
+    errors = []
+    for app in APPS:
+        path = TPL / f"{app}.tmpl"
+        unknown = sorted(set(PLACEHOLDER.findall(path.read_text())) - allowed)
+        if unknown:
+            errors.append(f"{path.relative_to(ROOT)}: unknown placeholders {', '.join(unknown)}")
+    if errors:
+        raise SystemExit("invalid templates:\n  - " + "\n  - ".join(errors))
 
 
 def shared_colors(pal):
@@ -181,7 +233,7 @@ def build_lua(pal):
     add("-- Static Gospel palette: shared cyberpunk accents over a selectable dark ramp.")
     add("-- Variants change ONLY the ramp (base/surface/overlay/_nc + highlight grays);")
     add("-- accents and neutrals are shared. Select with:")
-    add('--   require("static-gospel").setup({ variant = "drowned" })  -- or abyssal / lifted / void-lifted (void is the default)')
+    add('--   require("static-gospel").setup({ variant = "void-lifted" })  -- void is the default')
     add('local config = require("static-gospel.config")')
     add("")
     add("-- accents + neutrals, identical across every variant")
@@ -189,7 +241,7 @@ def build_lua(pal):
     for k in ("ash", "shroud", "text"):
         add(f'\t{k} = "{a[k]}",')
     add("")
-    for k in ("ichor", "witchfire", "siren", "rift", "aether", "verdigris", "ember", "blight"):
+    for k in ("ichor", "witchfire", "siren", "rift", "aether", "verdigris", "ember", "blight", "cursor"):
         add(f'\t{k} = "{a[k]}",')
     add("")
     add("\t-- bright ANSI, used only by the embedded terminal")
@@ -236,24 +288,54 @@ def all_outputs(pal):
     for app in APPS:
         tpl = (TPL / f"{app}.tmpl").read_text()
         for name, v in pal["variants"].items():
-            yield out_path(app, v["suffix"]), render(tpl, name, pal)
+            text = render(tpl, name, pal)
+            if PLACEHOLDER.search(text):
+                raise SystemExit(f"unresolved placeholder in {out_path(app, v['suffix']).relative_to(ROOT)}")
+            yield out_path(app, v["suffix"]), text
     for name, v in pal["variants"].items():
         yield brave_out_path(v["suffix"]), build_brave(name, pal)
     yield ROOT / "lua" / "static-gospel" / "palette.lua", build_lua(pal)
 
 
 def cmd_build(pal):
+    validate_templates(pal)
+    outputs = list(all_outputs(pal))
+    expected = {path.relative_to(ROOT).as_posix() for path, _ in outputs}
+    if MANIFEST.exists():
+        for rel in set(MANIFEST.read_text().splitlines()) - expected:
+            stale = (ROOT / rel).resolve()
+            if stale.is_relative_to(ROOT) and stale.is_file():
+                stale.unlink()
+                parent = stale.parent
+                while parent != ROOT:
+                    try:
+                        parent.rmdir()
+                    except OSError:
+                        break
+                    parent = parent.parent
     n = 0
-    for path, text in all_outputs(pal):
+    for path, text in outputs:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text)
         n += 1
+    MANIFEST.write_text("\n".join(sorted(expected)) + "\n")
     print(f"wrote {n} files")
 
 
 def cmd_check(pal):
+    validate_templates(pal)
     drift = 0
-    for path, text in all_outputs(pal):
+    outputs = list(all_outputs(pal))
+    expected = {path.relative_to(ROOT).as_posix() for path, _ in outputs}
+    recorded = set(MANIFEST.read_text().splitlines()) if MANIFEST.exists() else set()
+    for rel in sorted(recorded - expected):
+        if (ROOT / rel).exists():
+            drift += 1
+            print(f"STALE: {rel}")
+    if recorded != expected:
+        drift += 1
+        print("DRIFT: build/generated-files.txt")
+    for path, text in outputs:
         cur = path.read_text() if path.exists() else ""
         if cur != text:
             drift += 1
@@ -269,29 +351,10 @@ def cmd_check(pal):
     print("all files match palette.toml")
 
 
-def cmd_templatize(pal):
-    """Rebuild templates from the current default-variant files (dev-only)."""
-    # roles first, then shared; on a hex collision (cursor==blight) the first
-    # wins, keeping a single deterministic placeholder per hex.
-    hex_to_ph = {}
-    for r, hx in variant_colors(pal, default_variant_name(pal)).items():
-        hex_to_ph.setdefault(hx.lstrip("#").lower(), f"@@{r}@@")
-    for name, hx in shared_colors(pal).items():
-        hex_to_ph.setdefault(hx.lstrip("#").lower(), f"@@{name}@@")
-    TPL.mkdir(parents=True, exist_ok=True)
-    for app in APPS:
-        text = out_path(app, "").read_text()
-        for hx, ph in hex_to_ph.items():
-            text = text.replace("#" + hx, "#" + ph)  # '#rrggbb' -> '#@@role@@'
-            text = text.replace(hx, ph)               # bare 'rrggbb' -> '@@role@@'
-        # in-file install hints name this variant's own file
-        text = text.replace("static-gospel", "@@slug@@")
-        text = text.replace("Static Gospel", "Static Gospel@@name_suffix@@")
-        (TPL / f"{app}.tmpl").write_text(text)
-    print(f"regenerated {len(APPS)} templates")
-
-
 if __name__ == "__main__":
     pal = load_palette()
     cmd = sys.argv[1] if len(sys.argv) > 1 else "build"
-    {"build": cmd_build, "check": cmd_check, "templatize": cmd_templatize}[cmd](pal)
+    commands = {"build": cmd_build, "check": cmd_check}
+    if cmd not in commands:
+        raise SystemExit(f"usage: {Path(sys.argv[0]).name} [build|check]")
+    commands[cmd](pal)

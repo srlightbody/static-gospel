@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render assets/preview-<variant>.png from palette.toml (needs Pillow).
 
-  python build/preview.py            # void, drowned, abyssal, void-lifted
+  python build/preview.py            # void and void-lifted
   python build/preview.py all        # every variant
 """
 import sys, tomllib
@@ -11,7 +11,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parent.parent
 FONT_DIRS = [Path.home() / ".local/share/fonts/NerdFonts", Path("/usr/share/fonts/TTF")]
 FONT = "IosevkaNerdFont-{}.ttf"
-PREVIEWS = ["void", "drowned", "abyssal", "void-lifted"]
+PREVIEWS = ["void", "void-lifted"]
 W, H = 1000, 560
 
 
@@ -35,7 +35,7 @@ def code(p):
     R = lambda s, k, b=0, i=0, u=0: (s, p[k], b, i, u)
     return [
         [R("-- what the tide brought back, see ", "shroud", i=1), R("https://gate.io/chorus", "ember", i=1, u=1)],
-        [R("local ", "rift"), R("Chorus ", "text"), R("= ", "shroud"), R("require", "siren", b=1), R("(", "shroud"), R('"drowned.chorus"', "witchfire"), R(")", "shroud")],
+        [R("local ", "rift"), R("Chorus ", "text"), R("= ", "shroud"), R("require", "siren", b=1), R("(", "shroud"), R('"void.chorus"', "witchfire"), R(")", "shroud")],
         [R("function ", "rift"), R("Chorus", "text"), R(".", "shroud"), R("surface", "siren"), R("(", "shroud"), R("depth", "ember", i=1), R(", ", "shroud"), R("voices", "ember", i=1), R(")", "shroud")],
         [R("  ", "text"), R("local ", "rift"), R("song ", "text"), R("= ", "shroud"), R("voices ", "text"), R("or ", "shroud"), R("9", "witchfire")],
         [R("  ", "text"), R("if ", "rift"), R("depth ", "text"), R("> ", "shroud"), R("300 ", "witchfire"), R("then ", "rift"), R("return ", "rift"), R("nil", "witchfire", b=1), R(", ", "shroud"), R('"cold"', "witchfire"), R(" end", "rift")],

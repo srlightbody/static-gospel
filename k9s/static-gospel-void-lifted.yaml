@@ -12,7 +12,7 @@ k9s:
   prompt:
     fgColor: "#f5f5ff"
     bgColor: "#190a24"
-    suggestColor: "#ff8506"
+    suggestColor: "#e87500"
   info:
     fgColor: "#04d1f9"
     sectionColor: "#f5f5ff"
@@ -31,8 +31,8 @@ k9s:
       focusColor: "#fa4fbc"
     menu:
       fgColor: "#f5f5ff"
-      keyColor: "#ff8506"
-      numKeyColor: "#ff8506"
+      keyColor: "#e87500"
+      numKeyColor: "#e87500"
     crumbs:
       fgColor: "#190a24"
       bgColor: "#6e7487"
@@ -43,13 +43,13 @@ k9s:
       addColor: "#37f499"
       errorColor: "#ff3860"
       highlightColor: "#ffce54"
-      killColor: "#ff8506"
+      killColor: "#e87500"
       completedColor: "#6e7487"
     title:
       fgColor: "#f5f5ff"
       bgColor: "#190a24"
       highlightColor: "#ffce54"
-      counterColor: "#ff8506"
+      counterColor: "#e87500"
       filterColor: "#04d1f9"
   views:
     charts:
@@ -76,7 +76,7 @@ k9s:
       graphicColor: "#04d1f9"
     yaml:
       keyColor: "#9d6bff"
-      colonColor: "#97a0b6"
+      colonColor: "#8992a8"
       valueColor: "#f5f5ff"
     logs:
       fgColor: "#f5f5ff"

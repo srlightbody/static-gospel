@@ -1,15 +1,14 @@
----@alias Variant "drowned" | "void" | "abyssal" | "lifted" | "void-lifted"
----@alias Palette { base: string, surface: string, overlay: string, _nc: string, border: string, highlight_low: string, highlight_med: string, highlight_high: string, ash: string, shroud: string, text: string, ichor: string, witchfire: string, siren: string, rift: string, aether: string, verdigris: string, ember: string, blight: string, selection: string }
----@alias PaletteColor "base" | "surface" | "overlay" | "border" | "ash" | "shroud" | "text" | "ichor" | "witchfire" | "siren" | "rift" | "aether" | "verdigris" | "ember" | "blight" | "selection" | "highlight_low" | "highlight_med" | "highlight_high"
+---@alias Variant "void" | "void-lifted"
+---@alias Palette { base: string, surface: string, overlay: string, _nc: string, border: string, highlight_low: string, highlight_med: string, highlight_high: string, ash: string, shroud: string, text: string, ichor: string, witchfire: string, siren: string, rift: string, aether: string, verdigris: string, ember: string, blight: string, cursor: string, selection: string }
+---@alias PaletteColor "base" | "surface" | "overlay" | "border" | "ash" | "shroud" | "text" | "ichor" | "witchfire" | "siren" | "rift" | "aether" | "verdigris" | "ember" | "blight" | "cursor" | "selection" | "highlight_low" | "highlight_med" | "highlight_high"
 ---@alias Highlight { link: string, inherit: boolean } | { fg: string, bg: string, sp: string, bold: boolean, italic: boolean, undercurl: boolean, underline: boolean, underdouble: boolean, underdotted: boolean, underdashed: boolean, strikethrough: boolean, inherit: boolean }
 
 local config = {}
 
 ---@class Options
 config.options = {
-	---Set the desired variant: "void" (violet, default), "drowned" (teal),
-	---"abyssal" (blue), or the raised-floor LCD versions "lifted" (drowned)
-	---and "void-lifted" (void). "auto" resolves to `dark_variant`.
+	---Set the desired variant: "void" (default) or its raised-floor LCD
+	---adaptation, "void-lifted". "auto" resolves to `dark_variant`.
 	---@type "auto" | Variant
 	variant = "auto",
 
@@ -70,7 +69,7 @@ config.options = {
 		h3 = "siren",
 		h4 = "witchfire",
 		h5 = "rift",
-		h6 = "blight",
+		h6 = "verdigris",
 
 		---@deprecated Replaced by `options.highlight_groups["Normal"]`
 		-- background = "base",

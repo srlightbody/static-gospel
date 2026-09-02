@@ -1,9 +1,11 @@
 # Static Gospel
 
 The dark theme I use for everything: near black backgrounds with the accents
-turned way up. Covers nvim, terminals, git tools, the prompt and the WM. Five
-variants, forked from [eldritch-rose](https://github.com/srlightbody/eldritch-rose)
-when I turned the saturation up (that one's still muted).
+turned way up. Covers nvim, terminals, git tools, the prompt and the WM. The
+default is tuned for a high-contrast desktop display; a lifted variant preserves
+the same character on a basic LCD. Forked from
+[eldritch-rose](https://github.com/srlightbody/eldritch-rose) when I turned the
+saturation up (that one's still muted).
 
 ## Palette
 
@@ -18,16 +20,17 @@ change. Table below is the **void** base.
 | surface             | `#17112b` | void                |
 | overlay             | `#241a38` | void                |
 | ash                 | `#6e7487` | steel neutral       |
-| shroud              | `#97a0b6` | steel neutral       |
+| shroud              | `#8992a8` | steel neutral       |
 | text (fg)           | `#f5f5ff` |                     |
 | ichor (errors)      | `#ff3860` | wound-red           |
 | witchfire (strings) | `#ffce54` | forbidden gold      |
 | siren (functions)   | `#fa4fbc` | magenta wound       |
 | rift (keywords)     | `#9d6bff` | violet ritual       |
 | aether (signal)     | `#04d1f9` | electric cyan       |
-| verdigris (types)   | `#0dc6a6` | toxic teal          |
-| ember (directives)  | `#ff8506` | signal orange       |
-| blight / cursor     | `#37f499` | the one alive thing |
+| verdigris (types)   | `#00c28f` | toxic teal          |
+| ember (directives)  | `#e87500` | signal orange       |
+| blight              | `#37f499` | live/positive signal |
+| cursor              | `#37f499` | active position     |
 | selection (void)    | `#4b3f58` | violet tint         |
 
 Nothing is toned down, so the colors are told apart by hue instead of
@@ -43,37 +46,28 @@ bright   8 #6e7487  9 #ff5c78 10 #69f8b3 11 #ffe08a 12 #b892ff 13 #ff86d4 14 #66
 
 ## Variants
 
-Only the background ramp changes. **lifted** and **void-lifted** are drowned's
-and void's with the floor raised ~5 L* and the steps widened, so the depth
-survives on LCD and laptop panels instead of crushing to flat grey. Worth using
-on anything that isn't OLED.
+Only the background ramp changes. **void-lifted** raises the floor and widens
+the steps so the depth survives on a basic LCD or laptop panel instead of
+crushing to flat grey. The accents remain identical.
 
 | Variant | base | feel |
 |---------|-----------|-----------------------|
 | void *(default)* | `#130420` | near-black violet, night city |
-| drowned | `#111a1e` | teal deep, the sunken |
-| abyssal | `#0a1020` | deep cosmic blue |
-| lifted  | `#0c2126` | drowned, tuned for LCD |
 | void-lifted | `#190a24` | void, tuned for LCD |
 
 ![void](assets/preview-void.png)
-![drowned](assets/preview-drowned.png)
-![abyssal](assets/preview-abyssal.png)
 ![void-lifted](assets/preview-void-lifted.png)
-
-(lifted isn't pictured, it's drowned with a raised floor.)
 
 **Neovim** picks the variant at runtime:
 
 ```lua
-require("static-gospel").setup({ variant = "drowned" }) -- or abyssal, lifted, void-lifted (void is the default)
+require("static-gospel").setup({ variant = "void-lifted" }) -- void is the default
 vim.cmd.colorscheme("static-gospel")
 ```
 
 **Everything else** ships one file per variant next to the default (void), e.g.
-`ghostty/static-gospel-drowned`, `bat/static-gospel-abyssal.tmTheme`,
-`noctalia/colorschemes/Static Gospel Abyssal`, `brave/static-gospel-abyssal/`.
-Point your app at that instead.
+`ghostty/static-gospel-void-lifted`, `bat/static-gospel-void-lifted.tmTheme`,
+or `brave/static-gospel-void-lifted/`. Point your app at that instead.
 
 ## Building
 
@@ -83,13 +77,12 @@ Every app file is generated from `palette.toml`. Don't hand edit them, edit
 ```bash
 python build/build.py            # regenerate every app file + palette.lua
 python build/build.py check      # fail if any file is out of sync (CI/pre-commit)
-python build/build.py templatize # rebuild templates from the void (default) files
 python build/preview.py          # regenerate assets/preview-*.png (needs Pillow)
 ```
 
-Only ten roles change per variant (`base`/`surface`/`overlay`/`_nc`, the three
-highlight grays, `inactive_tab`/`border`/`selection`) plus the display name. A
-new variant is a new `[variants.*]` block and a rebuild.
+Ten roles change in the lifted adaptation (`base`/`surface`/`overlay`/`_nc`, the
+three highlight grays, `inactive_tab`/`border`/`selection`) plus the display
+name.
 
 ## Install
 
@@ -189,8 +182,8 @@ git clone https://github.com/srlightbody/static-gospel ~/.static-gospel
 
 Open `brave://extensions` (or `chrome://extensions`), enable Developer mode, click
 "Load unpacked", and select `~/.static-gospel/brave` for the default (void)
-theme, or a variant subfolder (`brave/static-gospel-drowned`, `-abyssal`,
-`-lifted`, `-void-lifted`). Each variant is a separate extension; to switch, load
+theme, or `brave/static-gospel-void-lifted` for the LCD adaptation. Each is a
+separate extension; to switch, load
 the new one and disable the old on the extensions page.
 
 ### foot
@@ -296,7 +289,7 @@ curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/lsd/
 ```
 
 lsd only reads `colors.yaml`, so for a variant save its file (e.g.
-`lsd/static-gospel-drowned.yaml`) to that same path.
+`lsd/static-gospel-void-lifted.yaml`) to that same path.
 
 ### Noctalia
 

@@ -1,0 +1,33 @@
+alacritty/static-gospel-void-lifted.toml
+alacritty/static-gospel.toml
+bat/static-gospel-void-lifted.tmTheme
+bat/static-gospel.tmTheme
+brave/manifest.json
+brave/static-gospel-void-lifted/manifest.json
+delta/static-gospel-void-lifted.gitconfig
+delta/static-gospel.gitconfig
+foot/static-gospel-void-lifted.ini
+foot/static-gospel.ini
+ghostty/static-gospel
+ghostty/static-gospel-void-lifted
+gtk/static-gospel-void-lifted.css
+gtk/static-gospel.css
+k9s/static-gospel-void-lifted.yaml
+k9s/static-gospel.yaml
+kitty/static-gospel-void-lifted.conf
+kitty/static-gospel.conf
+lazygit/static-gospel-void-lifted.yml
+lazygit/static-gospel.yml
+lsd/static-gospel-void-lifted.yaml
+lsd/static-gospel.yaml
+lua/static-gospel/palette.lua
+noctalia/colorschemes/Static Gospel Void Lifted/Static Gospel Void Lifted.json
+noctalia/colorschemes/Static Gospel/Static Gospel.json
+p10k/static-gospel-void-lifted.zsh
+p10k/static-gospel.zsh
+qt6ct/static-gospel-void-lifted.conf
+qt6ct/static-gospel.conf
+tmux/static-gospel-void-lifted.conf
+tmux/static-gospel.conf
+wezterm/static-gospel-void-lifted.toml
+wezterm/static-gospel.toml
