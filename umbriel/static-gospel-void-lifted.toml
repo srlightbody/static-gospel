@@ -1,0 +1,34 @@
+# Static Gospel Void Lifted - umbriel
+# add to [include] files in config.toml, after your shared config:  "~/.config/umbriel/static-gospel-void-lifted.toml"
+
+[colors]
+background = "#190a24ff"
+backdrop = "#190a24ff"
+text_primary = "#f5f5ffff"
+text_muted = "#6e7487ff"
+accent_primary = "#04d1f9ff"
+accent_secondary = "#ffce54ff"
+error = "#ff3860ff"
+warning = "#ffce54ff"
+insert_hint = "#04d1f980"
+shadow = "#12071c7f"
+
+[colors.border]
+focused = "#04d1f9ff"
+unfocused = "#464358ff"
+outer = "#12071cff"
+
+[colors.overview]
+background_tint = "#12071c30"
+badge = "#04d1f9ff"
+workspace_background = "#12071c44"
+
+[colors.tab_bar]
+background = "#261d38ff"
+text = "#6e7487ff"
+active = "#04d1f9ff"
+active_text = "#190a24ff"
+active_unfocused = "#382e4eff"
+active_unfocused_text = "#f5f5ffff"
+urgent = "#ff3860ff"
+urgent_text = "#190a24ff"

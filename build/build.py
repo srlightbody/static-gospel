@@ -36,6 +36,7 @@ APPS = {
     "p10k":      ("p10k", ".zsh"),
     "qt6ct":     ("qt6ct", ".conf"),
     "gtk":       ("gtk", ".css"),
+    "umbriel":   ("umbriel", ".toml"),
 }
 
 

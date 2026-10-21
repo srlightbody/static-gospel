@@ -301,6 +301,21 @@ mkdir -p ~/.config/noctalia/colorschemes
 cp -r "noctalia/colorschemes/Static Gospel" ~/.config/noctalia/colorschemes/
 ```
 
+### umbriel
+
+Colors only (borders, tab bar, overview, hints), layered over your own config:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/srlightbody/static-gospel/main/umbriel/static-gospel.toml \
+	-o ~/.config/umbriel/static-gospel.toml
+```
+
+```toml
+# ~/.config/umbriel/config.toml, theme last so it wins
+[include]
+files = ["/usr/share/umbriel/config.toml", "~/.config/umbriel/static-gospel.toml"]
+```
+
 ## Notes
 
 - The neovim theme vendors rose-pine/neovim's highlight engine (MIT, see

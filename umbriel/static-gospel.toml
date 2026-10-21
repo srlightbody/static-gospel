@@ -1,0 +1,34 @@
+# Static Gospel - umbriel
+# add to [include] files in config.toml, after your shared config:  "~/.config/umbriel/static-gospel.toml"
+
+[colors]
+background = "#130420ff"
+backdrop = "#130420ff"
+text_primary = "#f5f5ffff"
+text_muted = "#6e7487ff"
+accent_primary = "#04d1f9ff"
+accent_secondary = "#ffce54ff"
+error = "#ff3860ff"
+warning = "#ffce54ff"
+insert_hint = "#04d1f980"
+shadow = "#0a02147f"
+
+[colors.border]
+focused = "#04d1f9ff"
+unfocused = "#403d52ff"
+outer = "#0a0214ff"
+
+[colors.overview]
+background_tint = "#0a021430"
+badge = "#04d1f9ff"
+workspace_background = "#0a021444"
+
+[colors.tab_bar]
+background = "#17112bff"
+text = "#6e7487ff"
+active = "#04d1f9ff"
+active_text = "#130420ff"
+active_unfocused = "#241a38ff"
+active_unfocused_text = "#f5f5ffff"
+urgent = "#ff3860ff"
+urgent_text = "#130420ff"

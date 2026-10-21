@@ -29,5 +29,7 @@ qt6ct/static-gospel-void-lifted.conf
 qt6ct/static-gospel.conf
 tmux/static-gospel-void-lifted.conf
 tmux/static-gospel.conf
+umbriel/static-gospel-void-lifted.toml
+umbriel/static-gospel.toml
 wezterm/static-gospel-void-lifted.toml
 wezterm/static-gospel.toml
