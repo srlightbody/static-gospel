@@ -1,0 +1,41 @@
+# Static Gospel Chrome - lsd
+# place at ~/.config/lsd/colors.yaml (lsd reads it directly), or point lsd at it.
+
+user: "#f5e94a"
+group: "#6b7a8f"
+permission:
+  read: "#a37cff"
+  write: "#f5e94a"
+  exec: "#ff3b30"
+  exec-sticky: "#ff8a1f"
+  no-access: "#6b7a8f"
+  octal: "#00eaff"
+  acl: "#00eaff"
+  context: "#ff8a1f"
+date:
+  hour-old: "#00eaff"
+  day-old: "#00eaff"
+  older: "#6b7a8f"
+size:
+  none: "#6b7a8f"
+  small: "#a37cff"
+  medium: "#f5e94a"
+  large: "#ff3b30"
+inode:
+  valid: "#ff8a1f"
+  invalid: "#6b7a8f"
+links:
+  valid: "#ff8a1f"
+  invalid: "#6b7a8f"
+tree-edge: "#1e2836"
+git-status:
+  default: "#eef4ff"
+  unmodified: "#6b7a8f"
+  ignored: "#6b7a8f"
+  new-in-index: "#37f499"
+  new-in-workdir: "#37f499"
+  typechange: "#f5e94a"
+  deleted: "#ff3b30"
+  modified: "#f5e94a"
+  renamed: "#00eaff"
+  conflicted: "#ff3b30"

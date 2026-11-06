@@ -1,0 +1,17 @@
+# Static Gospel Chrome - wezterm
+# place in ~/.config/wezterm/colors/, then: config.color_scheme = "Static Gospel Chrome"
+
+[metadata]
+name = "Static Gospel Chrome"
+author = "Sam Lightbody"
+
+[colors]
+foreground = "#eef4ff"
+background = "#0a0e15"
+cursor_bg = "#37f499"
+cursor_fg = "#0a0e15"
+cursor_border = "#37f499"
+selection_fg = "#d6deec"
+selection_bg = "#173a4a"
+ansi = ["#1e2836", "#ff3b30", "#37f499", "#f5e94a", "#5a8cff", "#ff2a8a", "#00eaff", "#d6deec"]
+brights = ["#6b7a8f", "#ff6a5c", "#69f8b3", "#fff27a", "#8aacff", "#ff6aaa", "#6af3ff", "#eef4ff"]

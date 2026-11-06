@@ -1,0 +1,86 @@
+# Static Gospel Chrome - k9s skin
+# place in ~/.config/k9s/skins/static-gospel-chrome.yaml, then set in config.yaml:
+#   k9s:
+#     ui:
+#       skin: static-gospel-chrome
+
+k9s:
+  body:
+    fgColor: "#eef4ff"
+    bgColor: "#0a0e15"
+    logoColor: "#00eaff"
+  prompt:
+    fgColor: "#eef4ff"
+    bgColor: "#0a0e15"
+    suggestColor: "#ff8a1f"
+  info:
+    fgColor: "#00eaff"
+    sectionColor: "#eef4ff"
+  dialog:
+    fgColor: "#eef4ff"
+    bgColor: "#0a0e15"
+    buttonFgColor: "#0a0e15"
+    buttonBgColor: "#00eaff"
+    buttonFocusFgColor: "#0a0e15"
+    buttonFocusBgColor: "#37f499"
+    labelFgColor: "#f5e94a"
+    fieldFgColor: "#eef4ff"
+  frame:
+    border:
+      fgColor: "#1e2836"
+      focusColor: "#ff2a8a"
+    menu:
+      fgColor: "#eef4ff"
+      keyColor: "#ff8a1f"
+      numKeyColor: "#ff8a1f"
+    crumbs:
+      fgColor: "#0a0e15"
+      bgColor: "#6b7a8f"
+      activeColor: "#00eaff"
+    status:
+      newColor: "#00eaff"
+      modifyColor: "#5a8cff"
+      addColor: "#37f499"
+      errorColor: "#ff3b30"
+      highlightColor: "#f5e94a"
+      killColor: "#ff8a1f"
+      completedColor: "#6b7a8f"
+    title:
+      fgColor: "#eef4ff"
+      bgColor: "#0a0e15"
+      highlightColor: "#f5e94a"
+      counterColor: "#ff8a1f"
+      filterColor: "#00eaff"
+  views:
+    charts:
+      bgColor: "#0a0e15"
+      defaultDialColors:
+        - "#00eaff"
+        - "#ff3b30"
+      defaultChartColors:
+        - "#00eaff"
+        - "#ff3b30"
+    table:
+      fgColor: "#eef4ff"
+      bgColor: "#0a0e15"
+      cursorFgColor: "#eef4ff"
+      cursorBgColor: "#173a4a"
+      header:
+        fgColor: "#eef4ff"
+        bgColor: "#0a0e15"
+        sorterColor: "#37f499"
+    xray:
+      fgColor: "#eef4ff"
+      bgColor: "#0a0e15"
+      cursorColor: "#173a4a"
+      graphicColor: "#00eaff"
+    yaml:
+      keyColor: "#5a8cff"
+      colonColor: "#8b9bb2"
+      valueColor: "#eef4ff"
+    logs:
+      fgColor: "#eef4ff"
+      bgColor: "#0a0e15"
+      indicator:
+        fgColor: "#00eaff"
+        bgColor: "#0a0e15"

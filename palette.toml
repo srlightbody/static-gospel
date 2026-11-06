@@ -1,9 +1,10 @@
 # Static Gospel — single source of truth for all app themes.
 # Edit here, then run `python build/build.py` to regenerate every app file.
-# Shared colors are identical across variants; only [variants.*] ramps change.
+# Accents are shared across variants unless a variant overrides keys in its own
+# [variants.<name>.accents] / [variants.<name>.bright] tables.
 
 # order controls emission order in palette.lua
-order = ["void", "void-lifted"]
+order = ["void", "void-lifted", "chrome"]
 
 [accents]
 # steel neutrals: recooled off rose pine's warm violet-gray so they read as
@@ -78,3 +79,41 @@ hl_high      = "#58556e"
 inactive_tab = "#211f30"
 border       = "#333048"
 selection    = "#4c3f58"
+
+[variants.chrome]
+suffix       = "Chrome"
+comment      = [
+  "chrome: the cult's neon with the cult taken out. Cold blue-black instead of",
+  "violet, acid yellow strings, hot pink functions, electric blue keywords; violet",
+  "survives only on types. ANSI hue slots match void so terminal apps still read.",
+]
+base         = "#0a0e15"
+surface      = "#0f1520"
+overlay      = "#18212f"
+_nc          = "#05080d"
+hl_low       = "#1a2130"
+hl_med       = "#323d50"
+hl_high      = "#455265"
+inactive_tab = "#121925"
+border       = "#1e2836"
+selection    = "#173a4a"
+
+[variants.chrome.accents]
+ash       = "#6b7a8f"
+shroud    = "#8b9bb2"
+text      = "#eef4ff"
+ichor     = "#ff3b30"
+witchfire = "#f5e94a"
+siren     = "#ff2a8a"
+rift      = "#5a8cff"
+aether    = "#00eaff"
+verdigris = "#a37cff"
+ember     = "#ff8a1f"
+
+[variants.chrome.bright]
+white7  = "#d6deec"
+red     = "#ff6a5c"
+yellow  = "#fff27a"
+blue    = "#8aacff"
+magenta = "#ff6aaa"
+cyan    = "#6af3ff"

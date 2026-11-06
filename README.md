@@ -11,8 +11,8 @@ saturation up (that one's still muted).
 
 ![Static Gospel palette](palette.svg)
 
-Accents are the same in every variant, only `base`/`surface`/`overlay`/grays
-change. Table below is the **void** base.
+void and void-lifted share accents, only `base`/`surface`/`overlay`/grays
+change; chrome swaps the accents too. Table below is **void**.
 
 | Role                | Hex       | Note                |
 |---------------------|-----------|---------------------|
@@ -46,22 +46,26 @@ bright   8 #6e7487  9 #ff5c78 10 #69f8b3 11 #ffe08a 12 #b892ff 13 #ff86d4 14 #66
 
 ## Variants
 
-Only the background ramp changes. **void-lifted** raises the floor and widens
-the steps so the depth survives on a basic LCD or laptop panel instead of
-crushing to flat grey. The accents remain identical.
+**void-lifted** raises the floor and widens the steps so the depth survives on
+a basic LCD or laptop panel instead of crushing to flat grey, with identical
+accents. **chrome** drops the cult for straight cyberpunk: cold blue-black
+background, acid yellow strings, hot pink functions, electric blue keywords,
+violet only on types. ANSI hue slots match void, so terminal apps still read.
 
 | Variant | base | feel |
 |---------|-----------|-----------------------|
 | void *(default)* | `#130420` | near-black violet, night city |
 | void-lifted | `#190a24` | void, tuned for LCD |
+| chrome | `#0a0e15` | cold blue-black, cyberpunk accents |
 
 ![void](assets/preview-void.png)
 ![void-lifted](assets/preview-void-lifted.png)
+![chrome](assets/preview-chrome.png)
 
 **Neovim** picks the variant at runtime:
 
 ```lua
-require("static-gospel").setup({ variant = "void-lifted" }) -- void is the default
+require("static-gospel").setup({ variant = "chrome" }) -- void (default), void-lifted, chrome
 vim.cmd.colorscheme("static-gospel")
 ```
 
@@ -80,9 +84,10 @@ python build/build.py check      # fail if any file is out of sync (CI/pre-commi
 python build/preview.py          # regenerate assets/preview-*.png (needs Pillow)
 ```
 
-Ten roles change in the lifted adaptation (`base`/`surface`/`overlay`/`_nc`, the
-three highlight grays, `inactive_tab`/`border`/`selection`) plus the display
-name.
+Every variant sets ten ramp roles (`base`/`surface`/`overlay`/`_nc`, the three
+highlight grays, `inactive_tab`/`border`/`selection`) plus the display name. A
+variant can also override individual accents or bright ANSI colors in
+`[variants.<name>.accents]` / `[variants.<name>.bright]`, as chrome does.
 
 ## Install
 
@@ -182,7 +187,8 @@ git clone https://github.com/srlightbody/static-gospel ~/.static-gospel
 
 Open `brave://extensions` (or `chrome://extensions`), enable Developer mode, click
 "Load unpacked", and select `~/.static-gospel/brave` for the default (void)
-theme, or `brave/static-gospel-void-lifted` for the LCD adaptation. Each is a
+theme, `brave/static-gospel-void-lifted` for the LCD adaptation, or
+`brave/static-gospel-chrome`. Each is a
 separate extension; to switch, load
 the new one and disable the old on the extensions page.
 

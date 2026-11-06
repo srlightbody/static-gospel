@@ -4,9 +4,9 @@
   python build/build.py            # write all app files + palette.lua
   python build/build.py check      # verify working tree matches (CI/pre-commit)
 
-Only the 10 per-variant roles (base/surface/overlay/_nc/hl_low/hl_med/hl_high +
-inactive_tab/border/selection) and the display name vary between variants; everything else
-is shared. Templates carry explicit @@role@@ placeholders and are edited directly.
+Each variant sets the 10 ramp roles (base/surface/overlay/_nc/hl_low/hl_med/hl_high +
+inactive_tab/border/selection) and its display name. Accents and bright ANSI are shared
+unless a variant overrides individual keys in [variants.<name>.accents] / .bright. Templates carry explicit @@role@@ placeholders and are edited directly.
 """
 import sys, tomllib, difflib, re
 from pathlib import Path
@@ -75,6 +75,12 @@ def validate_palette(pal):
         for role in ROLES:
             if role in value and (not isinstance(value[role], str) or not HEX.fullmatch(value[role])):
                 errors.append(f"variants.{name}.{role} must be a six-digit hex color")
+        for section in ("accents", "bright"):
+            for key, hx in value.get(section, {}).items():
+                if key not in pal.get(section, {}):
+                    errors.append(f"variants.{name}.{section}.{key} overrides an unknown {section} key")
+                elif not isinstance(hx, str) or not HEX.fullmatch(hx):
+                    errors.append(f"variants.{name}.{section}.{key} must be a six-digit hex color")
     if errors:
         raise SystemExit("invalid palette.toml:\n  - " + "\n  - ".join(errors))
 
@@ -94,12 +100,18 @@ def validate_templates(pal):
         raise SystemExit("invalid templates:\n  - " + "\n  - ".join(errors))
 
 
-def shared_colors(pal):
-    """Flat name->hex for colors identical across variants (accents/bright)."""
-    out = {}
-    for k, v in pal["accents"].items():
-        out[k] = v
-    for k, v in pal["bright"].items():
+def resolved(pal, section, variant=None):
+    """Shared accents/bright with this variant's overrides applied."""
+    out = dict(pal[section])
+    if variant:
+        out.update(pal["variants"][variant].get(section, {}))
+    return out
+
+
+def shared_colors(pal, variant=None):
+    """Flat name->hex for accents/bright, with any per-variant overrides."""
+    out = dict(resolved(pal, "accents", variant))
+    for k, v in resolved(pal, "bright", variant).items():
         out[f"b_{k}"] = v
     return out
 
@@ -115,7 +127,7 @@ def blend_hex(fg, bg, t):
 def variant_colors(pal, variant):
     """Per-variant roles plus the delta diff tints derived from this base."""
     v = pal["variants"][variant]
-    a = pal["accents"]
+    a = resolved(pal, "accents", variant)
     out = {r: v[r] for r in ROLES}
     out["d_plus"] = blend_hex(a["blight"], v["base"], DELTA_LINE)
     out["d_plus_emph"] = blend_hex(a["blight"], v["base"], DELTA_EMPH)
@@ -167,7 +179,7 @@ def build_brave(variant, pal):
     palette role, so they're blended from the adjacent base/surface/overlay
     ramp instead of pulled straight from palette.toml."""
     v = pal["variants"][variant]
-    a, br = pal["accents"], pal["bright"]
+    a, br = resolved(pal, "accents", variant), resolved(pal, "bright", variant)
     frame = hex_to_rgb(v["base"])
     frame_incognito = hex_to_rgb(v["border"])
     colors = {
@@ -220,7 +232,7 @@ def render(template_text, variant, pal):
     # (foot) both round-trip.
     for role, hx in variant_colors(pal, variant).items():
         out = out.replace(f"@@{role}@@", hx.lstrip("#"))
-    for name, hx in shared_colors(pal).items():
+    for name, hx in shared_colors(pal, variant).items():
         out = out.replace(f"@@{name}@@", hx.lstrip("#"))
     suffix = f" {v['suffix']}" if v["suffix"] else ""
     return out.replace("@@name_suffix@@", suffix).replace("@@slug@@", slugify(v["suffix"]))
@@ -232,12 +244,12 @@ def build_lua(pal):
     L = []
     add = L.append
     add("-- Static Gospel palette: shared cyberpunk accents over a selectable dark ramp.")
-    add("-- Variants change ONLY the ramp (base/surface/overlay/_nc + highlight grays);")
-    add("-- accents and neutrals are shared. Select with:")
+    add("-- Variants set the ramp (base/surface/overlay/_nc + highlight grays) and may")
+    add("-- override individual accents. Select with:")
     add('--   require("static-gospel").setup({ variant = "void-lifted" })  -- void is the default')
     add('local config = require("static-gospel.config")')
     add("")
-    add("-- accents + neutrals, identical across every variant")
+    add("-- accents + neutrals, unless a variant overrides them")
     add("local shared = {")
     for k in ("ash", "shroud", "text"):
         add(f'\t{k} = "{a[k]}",')
@@ -252,7 +264,7 @@ def build_lua(pal):
     add('\tnone = "NONE",')
     add("}")
     add("")
-    add("-- per-variant dark ramp")
+    add("-- per-variant dark ramp and accent overrides")
     add("local ramps = {")
     for name in pal["order"]:
         v = pal["variants"][name]
@@ -265,6 +277,10 @@ def build_lua(pal):
         add(f'\t\thighlight_low = "{v["hl_low"]}", highlight_med = "{v["hl_med"]}", '
             f'highlight_high = "{v["hl_high"]}",')
         add(f'\t\tborder = "{v["border"]}", selection = "{v["selection"]}",')
+        for k, hx in v.get("accents", {}).items():
+            add(f'\t\t{k} = "{hx}",')
+        for k, hx in v.get("bright", {}).items():
+            add(f'\t\tb_{k} = "{hx}",')
         add("\t},")
     add("}")
     add("")
@@ -277,7 +293,7 @@ def build_lua(pal):
     add('\tif v == "auto" then v = config.options.dark_variant end')
     add('\tif not ramps[v] then v = "void" end')
     add("\tif not built[v] then")
-    add("\t\tbuilt[v] = vim.tbl_extend(\"force\", {}, ramps[v], shared)")
+    add("\t\tbuilt[v] = vim.tbl_extend(\"force\", {}, shared, ramps[v])")
     add("\tend")
     add("\treturn built[v]")
     add("end")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render assets/preview-<variant>.png from palette.toml (needs Pillow).
 
-  python build/preview.py            # void and void-lifted
+  python build/preview.py            # void, void-lifted, chrome
   python build/preview.py all        # every variant
 """
 import sys, tomllib
@@ -11,7 +11,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parent.parent
 FONT_DIRS = [Path.home() / ".local/share/fonts/NerdFonts", Path("/usr/share/fonts/TTF")]
 FONT = "IosevkaNerdFont-{}.ttf"
-PREVIEWS = ["void", "void-lifted"]
+PREVIEWS = ["void", "void-lifted", "chrome"]
 W, H = 1000, 560
 
 
@@ -25,8 +25,10 @@ def font(style, size):
 
 def palette(variant):
     pal = tomllib.loads((ROOT / "palette.toml").read_text())
+    v = pal["variants"][variant]
     p = dict(pal["accents"])
-    p.update(pal["variants"][variant])
+    p.update({k: x for k, x in v.items() if isinstance(x, str)})
+    p.update(v.get("accents", {}))
     return p
 
 

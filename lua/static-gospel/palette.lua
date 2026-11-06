@@ -1,10 +1,10 @@
 -- Static Gospel palette: shared cyberpunk accents over a selectable dark ramp.
--- Variants change ONLY the ramp (base/surface/overlay/_nc + highlight grays);
--- accents and neutrals are shared. Select with:
+-- Variants set the ramp (base/surface/overlay/_nc + highlight grays) and may
+-- override individual accents. Select with:
 --   require("static-gospel").setup({ variant = "void-lifted" })  -- void is the default
 local config = require("static-gospel.config")
 
--- accents + neutrals, identical across every variant
+-- accents + neutrals, unless a variant overrides them
 local shared = {
 	ash = "#6e7487",
 	shroud = "#8992a8",
@@ -32,7 +32,7 @@ local shared = {
 	none = "NONE",
 }
 
--- per-variant dark ramp
+-- per-variant dark ramp and accent overrides
 local ramps = {
 	-- void: near-black violet (default) — night city, the drowned lit up
 	void = {
@@ -48,6 +48,30 @@ local ramps = {
 		highlight_low = "#2b2a38", highlight_med = "#464358", highlight_high = "#58556e",
 		border = "#333048", selection = "#4c3f58",
 	},
+	-- chrome: the cult's neon with the cult taken out. Cold blue-black instead of
+	-- violet, acid yellow strings, hot pink functions, electric blue keywords; violet
+	-- survives only on types. ANSI hue slots match void so terminal apps still read.
+	chrome = {
+		base = "#0a0e15", surface = "#0f1520", overlay = "#18212f", _nc = "#05080d",
+		highlight_low = "#1a2130", highlight_med = "#323d50", highlight_high = "#455265",
+		border = "#1e2836", selection = "#173a4a",
+		ash = "#6b7a8f",
+		shroud = "#8b9bb2",
+		text = "#eef4ff",
+		ichor = "#ff3b30",
+		witchfire = "#f5e94a",
+		siren = "#ff2a8a",
+		rift = "#5a8cff",
+		aether = "#00eaff",
+		verdigris = "#a37cff",
+		ember = "#ff8a1f",
+		b_white7 = "#d6deec",
+		b_red = "#ff6a5c",
+		b_yellow = "#fff27a",
+		b_blue = "#8aacff",
+		b_magenta = "#ff6aaa",
+		b_cyan = "#6af3ff",
+	},
 }
 
 local built = {}
@@ -59,7 +83,7 @@ return function()
 	if v == "auto" then v = config.options.dark_variant end
 	if not ramps[v] then v = "void" end
 	if not built[v] then
-		built[v] = vim.tbl_extend("force", {}, ramps[v], shared)
+		built[v] = vim.tbl_extend("force", {}, shared, ramps[v])
 	end
 	return built[v]
 end
