@@ -48,13 +48,13 @@ local ramps = {
 		highlight_low = "#2b2a38", highlight_med = "#464358", highlight_high = "#58556e",
 		border = "#333048", selection = "#4c3f58",
 	},
-	-- chrome: the cult's neon with the cult taken out. Cold blue-black instead of
+	-- chrome: the cult's neon with the cult taken out. Deep petrol instead of
 	-- violet, acid yellow strings, hot pink functions, electric blue keywords; violet
 	-- survives only on types. ANSI hue slots match void so terminal apps still read.
 	chrome = {
-		base = "#0a0e15", surface = "#0f1520", overlay = "#18212f", _nc = "#05080d",
-		highlight_low = "#1a2130", highlight_med = "#323d50", highlight_high = "#455265",
-		border = "#1e2836", selection = "#173a4a",
+		base = "#06151c", surface = "#0b1f28", overlay = "#132e3a", _nc = "#050b0d",
+		highlight_low = "#1a2930", highlight_med = "#324750", highlight_high = "#455b65",
+		border = "#1e2f36", selection = "#12445a",
 		ash = "#6b7a8f",
 		shroud = "#8b9bb2",
 		text = "#eef4ff",

@@ -10,15 +10,15 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#0a0e15</string>
+				<string>#06151c</string>
 				<key>foreground</key>
 				<string>#eef4ff</string>
 				<key>caret</key>
 				<string>#37f499</string>
 				<key>lineHighlight</key>
-				<string>#121925</string>
+				<string>#121f25</string>
 				<key>selection</key>
-				<string>#173a4a</string>
+				<string>#12445a</string>
 				<key>gutterForeground</key>
 				<string>#6b7a8f</string>
 			</dict>

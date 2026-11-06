@@ -48,7 +48,7 @@ bright   8 #6e7487  9 #ff5c78 10 #69f8b3 11 #ffe08a 12 #b892ff 13 #ff86d4 14 #66
 
 **void-lifted** raises the floor and widens the steps so the depth survives on
 a basic LCD or laptop panel instead of crushing to flat grey, with identical
-accents. **chrome** drops the cult for straight cyberpunk: cold blue-black
+accents. **chrome** drops the cult for straight cyberpunk: deep petrol
 background, acid yellow strings, hot pink functions, electric blue keywords,
 violet only on types. ANSI hue slots match void, so terminal apps still read.
 
@@ -56,7 +56,7 @@ violet only on types. ANSI hue slots match void, so terminal apps still read.
 |---------|-----------|-----------------------|
 | void *(default)* | `#130420` | near-black violet, night city |
 | void-lifted | `#190a24` | void, tuned for LCD |
-| chrome | `#0a0e15` | cold blue-black, cyberpunk accents |
+| chrome | `#06151c` | deep petrol, cyberpunk accents |
 
 ![void](assets/preview-void.png)
 ![void-lifted](assets/preview-void-lifted.png)

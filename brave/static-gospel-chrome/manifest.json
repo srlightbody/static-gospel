@@ -5,20 +5,20 @@
 	"description": "Eldritch cyberpunk: full-chroma occult neon over deep voids.",
 	"theme": {
 		"colors": {
-			"frame": [10, 14, 21],
-			"frame_inactive": [12, 18, 26],
-			"frame_incognito": [30, 40, 54],
-			"frame_incognito_inactive": [20, 27, 40],
-			"toolbar": [15, 21, 32],
+			"frame": [6, 21, 28],
+			"frame_inactive": [8, 26, 34],
+			"frame_incognito": [30, 47, 54],
+			"frame_incognito_inactive": [15, 38, 49],
+			"toolbar": [11, 31, 40],
 			"tab_text": [238, 244, 255],
 			"tab_background_text": [107, 122, 143],
 			"background_tab_text": [107, 122, 143],
 			"bookmark_text": [214, 222, 236],
-			"ntp_background": [10, 14, 21],
+			"ntp_background": [6, 21, 28],
 			"ntp_text": [238, 244, 255],
 			"ntp_link": [90, 140, 255],
-			"ntp_header": [30, 40, 54],
-			"control_background": [30, 40, 54]
+			"ntp_header": [30, 47, 54],
+			"control_background": [30, 47, 54]
 		},
 		"tints": {
 			"buttons": [-1, -1, 0.9]

@@ -9,21 +9,21 @@
 	syntax-theme = static-gospel-chrome
 	line-numbers = true
 
-	minus-style = syntax "#47191c"
-	minus-emph-style = syntax "#6c2020"
-	plus-style = syntax "#154836"
-	plus-emph-style = syntax "#1c6a4a"
+	minus-style = syntax "#441e21"
+	minus-emph-style = syntax "#6a2424"
+	plus-style = syntax "#124d3b"
+	plus-emph-style = syntax "#1a6e4e"
 
 	line-numbers-minus-style = "#ff3b30"
 	line-numbers-plus-style = "#37f499"
 	line-numbers-zero-style = "#6b7a8f"
-	line-numbers-left-style = "#1e2836"
-	line-numbers-right-style = "#1e2836"
+	line-numbers-left-style = "#1e2f36"
+	line-numbers-right-style = "#1e2f36"
 
 	file-style = "#00eaff" bold
-	file-decoration-style = "#1e2836" ul
+	file-decoration-style = "#1e2f36" ul
 	hunk-header-style = "#ff8a1f" bold
-	hunk-header-decoration-style = "#1e2836" box
+	hunk-header-decoration-style = "#1e2f36" box
 
 	zero-style = syntax
 	whitespace-error-style = "#ff3b30" reverse

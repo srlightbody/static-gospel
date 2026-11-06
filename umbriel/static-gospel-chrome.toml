@@ -2,8 +2,8 @@
 # add to [include] files in config.toml, after your shared config:  "~/.config/umbriel/static-gospel-chrome.toml"
 
 [colors]
-background = "#0a0e15ff"
-backdrop = "#0a0e15ff"
+background = "#06151cff"
+backdrop = "#06151cff"
 text_primary = "#eef4ffff"
 text_muted = "#6b7a8fff"
 accent_primary = "#00eaffff"
@@ -11,24 +11,24 @@ accent_secondary = "#f0ff3cff"
 error = "#ff3b30ff"
 warning = "#f0ff3cff"
 insert_hint = "#00eaff80"
-shadow = "#05080d7f"
+shadow = "#050b0d7f"
 
 [colors.border]
 focused = "#00eaffff"
-unfocused = "#323d50ff"
-outer = "#05080dff"
+unfocused = "#324750ff"
+outer = "#050b0dff"
 
 [colors.overview]
-background_tint = "#05080d30"
+background_tint = "#050b0d30"
 badge = "#00eaffff"
-workspace_background = "#05080d44"
+workspace_background = "#050b0d44"
 
 [colors.tab_bar]
-background = "#0f1520ff"
+background = "#0b1f28ff"
 text = "#6b7a8fff"
 active = "#00eaffff"
-active_text = "#0a0e15ff"
-active_unfocused = "#18212fff"
+active_text = "#06151cff"
+active_unfocused = "#132e3aff"
 active_unfocused_text = "#eef4ffff"
 urgent = "#ff3b30ff"
-urgent_text = "#0a0e15ff"
+urgent_text = "#06151cff"

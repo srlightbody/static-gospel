@@ -83,20 +83,20 @@ selection    = "#4c3f58"
 [variants.chrome]
 suffix       = "Chrome"
 comment      = [
-  "chrome: the cult's neon with the cult taken out. Cold blue-black instead of",
+  "chrome: the cult's neon with the cult taken out. Deep petrol instead of",
   "violet, acid yellow strings, hot pink functions, electric blue keywords; violet",
   "survives only on types. ANSI hue slots match void so terminal apps still read.",
 ]
-base         = "#0a0e15"
-surface      = "#0f1520"
-overlay      = "#18212f"
-_nc          = "#05080d"
-hl_low       = "#1a2130"
-hl_med       = "#323d50"
-hl_high      = "#455265"
-inactive_tab = "#121925"
-border       = "#1e2836"
-selection    = "#173a4a"
+base         = "#06151c"
+surface      = "#0b1f28"
+overlay      = "#132e3a"
+_nc          = "#050b0d"
+hl_low       = "#1a2930"
+hl_med       = "#324750"
+hl_high      = "#455b65"
+inactive_tab = "#121f25"
+border       = "#1e2f36"
+selection    = "#12445a"
 
 [variants.chrome.accents]
 ash       = "#6b7a8f"
