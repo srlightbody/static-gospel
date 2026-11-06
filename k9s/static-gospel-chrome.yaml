@@ -23,7 +23,7 @@ k9s:
     buttonBgColor: "#00eaff"
     buttonFocusFgColor: "#0a0e15"
     buttonFocusBgColor: "#37f499"
-    labelFgColor: "#f5e94a"
+    labelFgColor: "#f0ff3c"
     fieldFgColor: "#eef4ff"
   frame:
     border:
@@ -42,13 +42,13 @@ k9s:
       modifyColor: "#5a8cff"
       addColor: "#37f499"
       errorColor: "#ff3b30"
-      highlightColor: "#f5e94a"
+      highlightColor: "#f0ff3c"
       killColor: "#ff8a1f"
       completedColor: "#6b7a8f"
     title:
       fgColor: "#eef4ff"
       bgColor: "#0a0e15"
-      highlightColor: "#f5e94a"
+      highlightColor: "#f0ff3c"
       counterColor: "#ff8a1f"
       filterColor: "#00eaff"
   views:
